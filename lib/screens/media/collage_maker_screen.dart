@@ -1,4 +1,4 @@
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
@@ -55,7 +55,7 @@ class _CollageMakerScreenState extends BaseToolScreenState<CollageMakerScreen> {
       final dir = await getTemporaryDirectory();
       final out = p.join(dir.path, 'collage_${DateTime.now().millisecondsSinceEpoch}.png');
       await File(out).writeAsBytes(byteData.buffer.asUint8List());
-      await Share.shareXFiles([XFile(out)]);
+      await SharePlus.instance.share(ShareParams(files: [XFile(out)]));
     } catch (e) { setError('Error: $e'); }
     setLoading(false);
   }

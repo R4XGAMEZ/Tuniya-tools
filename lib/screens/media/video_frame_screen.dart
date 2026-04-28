@@ -1,4 +1,4 @@
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -105,7 +105,7 @@ class _VideoFrameScreenState extends BaseToolScreenState<VideoFrameScreen> {
               child: Stack(children: [
                 Image.file(File(_frames[i]), fit: BoxFit.cover, width: double.infinity, height: double.infinity),
                 Positioned(bottom: 4, right: 4, child: GestureDetector(
-                  onTap: () => Share.shareXFiles([XFile(_frames[i])]),
+                  onTap: () => SharePlus.instance.share(ShareParams(files: [XFile(_frames[i])])),
                   child: Container(padding: const EdgeInsets.all(6), decoration: BoxDecoration(color: AppTheme.purple, borderRadius: BorderRadius.circular(8)), child: const Icon(Icons.share, color: Colors.white, size: 16)),
                 )),
               ]),
