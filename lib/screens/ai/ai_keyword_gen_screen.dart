@@ -68,7 +68,7 @@ class _AiKeywordGenScreenState extends State<AiKeywordGenScreen> {
           Wrap(spacing: 8, runSpacing: 8, children: _platforms.map((p) {
             final sel = p == _platform;
             return GestureDetector(
-              onPressed: () => setState(() => _platform = p),
+              onTap: () => setState(() => _platform = p),
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 decoration: BoxDecoration(
@@ -80,7 +80,7 @@ class _AiKeywordGenScreenState extends State<AiKeywordGenScreen> {
                 child: Text(p, style: GoogleFonts.rajdhani(color: Colors.white, fontSize: 13)),
               ),
             );
-          }).toList()),
+          }).toList() as List<Widget>),
           const SizedBox(height: 14),
           Text('Video / Post Topic', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 13)),
           const SizedBox(height: 6),
@@ -109,7 +109,7 @@ class _AiKeywordGenScreenState extends State<AiKeywordGenScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Text('${_keywords.length} Keywords', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 13)),
               GestureDetector(
-                onPressed: () { Clipboard.setData(ClipboardData(text: _keywords.join(', '))); _showSnack('Saare keywords copy ho gaye!'); },
+                onTap: () { Clipboard.setData(ClipboardData(text: _keywords.join(', '))); _showSnack('Saare keywords copy ho gaye!'); },
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(gradient: AppTheme.brandGradient, borderRadius: BorderRadius.circular(20)),
@@ -123,7 +123,7 @@ class _AiKeywordGenScreenState extends State<AiKeywordGenScreen> {
             ]),
             const SizedBox(height: 12),
             Wrap(spacing: 8, runSpacing: 8, children: _keywords.map((k) => GestureDetector(
-              onPressed: () { Clipboard.setData(ClipboardData(text: k)); _showSnack('Copied: $k'); },
+              onTap: () { Clipboard.setData(ClipboardData(text: k)); _showSnack('Copied: $k'); },
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(
@@ -137,7 +137,7 @@ class _AiKeywordGenScreenState extends State<AiKeywordGenScreen> {
                   Text(k, style: GoogleFonts.rajdhani(color: AppTheme.textPrimary, fontSize: 13)),
                 ]),
               ),
-            )).toList()),
+            )).toList() as List<Widget>),
             const SizedBox(height: 16),
             Container(
               width: double.infinity,

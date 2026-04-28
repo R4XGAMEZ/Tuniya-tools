@@ -96,7 +96,7 @@ class _AiGrammarScreenState extends State<AiGrammarScreen> {
               Text('Fixed Text', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 13)),
               Row(children: [
                 GestureDetector(
-                  onPressed: () { _inputCtrl.text = _output; setState(() => _output = ''); },
+                  onTap: () { _inputCtrl.text = _output; setState(() => _output = ''); },
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     margin: const EdgeInsets.only(right: 8),
@@ -105,7 +105,7 @@ class _AiGrammarScreenState extends State<AiGrammarScreen> {
                   ),
                 ),
                 GestureDetector(
-                  onPressed: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Copied!'); },
+                  onTap: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Copied!'); },
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(gradient: AppTheme.brandGradient, borderRadius: BorderRadius.circular(20)),

@@ -71,7 +71,7 @@ class _AiSocialBioScreenState extends State<AiSocialBioScreen> {
           Wrap(spacing: 8, runSpacing: 8, children: _platforms.map((p) {
             final sel = p == _platform;
             return GestureDetector(
-              onPressed: () => setState(() => _platform = p),
+              onTap: () => setState(() => _platform = p),
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 decoration: BoxDecoration(
@@ -83,7 +83,7 @@ class _AiSocialBioScreenState extends State<AiSocialBioScreen> {
                 child: Text(p, style: GoogleFonts.rajdhani(color: Colors.white, fontSize: 13)),
               ),
             );
-          }).toList()),
+          }).toList() as List<Widget>),
           const SizedBox(height: 14),
           Text('Vibe / Style', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 13)),
           const SizedBox(height: 8),
@@ -138,7 +138,7 @@ class _AiSocialBioScreenState extends State<AiSocialBioScreen> {
                     child: Text('Option ${e.key + 1}', style: GoogleFonts.rajdhani(color: Colors.white, fontSize: 11)),
                   ),
                   GestureDetector(
-                    onPressed: () { Clipboard.setData(ClipboardData(text: e.value)); _showSnack('Bio ${e.key + 1} copied!'); },
+                    onTap: () { Clipboard.setData(ClipboardData(text: e.value)); _showSnack('Bio ${e.key + 1} copied!'); },
                     child: const Icon(Icons.copy, color: AppTheme.textSecondary, size: 18),
                   ),
                 ]),

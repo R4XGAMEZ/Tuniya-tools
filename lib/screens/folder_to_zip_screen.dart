@@ -1,4 +1,4 @@
-import 'package:share_plus/share_plus.dart';
+import 'package:share/share.dart';
 import 'dart:io';
 import 'package:archive/archive_io.dart';
 import 'package:file_picker/file_picker.dart';
@@ -241,7 +241,7 @@ class _FolderToZipScreenState extends BaseToolScreenState<FolderToZipScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton.icon(
-                    onPressed: () => SharePlus.instance.share(ShareParams(files: [XFile(_savedPath!)])),
+                    onPressed: () => Share.shareXFiles([XFile(_savedPath!)]),
                     icon: const Icon(Icons.share_outlined, size: 16),
                     label: Text('Share ZIP', style: GoogleFonts.rajdhani()),
                     style: OutlinedButton.styleFrom(

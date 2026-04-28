@@ -83,7 +83,7 @@ class _AiPdfSummarizerScreenState extends State<AiPdfSummarizerScreen> {
           Row(children: [
             Expanded(
               child: GestureDetector(
-                onPressed: () => setState(() => _useTextMode = false),
+                onTap: () => setState(() => _useTextMode = false),
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   decoration: BoxDecoration(
@@ -98,7 +98,7 @@ class _AiPdfSummarizerScreenState extends State<AiPdfSummarizerScreen> {
             ),
             Expanded(
               child: GestureDetector(
-                onPressed: () => setState(() => _useTextMode = true),
+                onTap: () => setState(() => _useTextMode = true),
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   decoration: BoxDecoration(
@@ -115,7 +115,7 @@ class _AiPdfSummarizerScreenState extends State<AiPdfSummarizerScreen> {
           const SizedBox(height: 14),
           if (!_useTextMode) ...[
             GestureDetector(
-              onPressed: _pickPdf,
+              onTap: _pickPdf,
               child: Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(24),
@@ -177,7 +177,7 @@ class _AiPdfSummarizerScreenState extends State<AiPdfSummarizerScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Text('Summary', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 13)),
               GestureDetector(
-                onPressed: () { Clipboard.setData(ClipboardData(text: _summary)); _showSnack('Copied!'); },
+                onTap: () { Clipboard.setData(ClipboardData(text: _summary)); _showSnack('Copied!'); },
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(gradient: AppTheme.brandGradient, borderRadius: BorderRadius.circular(20)),

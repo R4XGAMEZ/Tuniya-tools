@@ -71,7 +71,7 @@ class _AiCodeHelperScreenState extends State<AiCodeHelperScreen> {
           Wrap(spacing: 8, runSpacing: 8, children: _modes.map((m) {
             final sel = m == _mode;
             return GestureDetector(
-              onPressed: () => setState(() => _mode = m),
+              onTap: () => setState(() => _mode = m),
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 decoration: BoxDecoration(
@@ -83,7 +83,7 @@ class _AiCodeHelperScreenState extends State<AiCodeHelperScreen> {
                 child: Text(m, style: GoogleFonts.rajdhani(color: Colors.white, fontSize: 13, fontWeight: sel ? FontWeight.bold : FontWeight.normal)),
               ),
             );
-          }).toList()),
+          }).toList() as List<Widget>),
           const SizedBox(height: 14),
           // Language
           Text('Language', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 13)),
@@ -131,7 +131,7 @@ class _AiCodeHelperScreenState extends State<AiCodeHelperScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Text('Answer', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 13)),
               GestureDetector(
-                onPressed: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Copied!'); },
+                onTap: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Copied!'); },
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(gradient: AppTheme.brandGradient, borderRadius: BorderRadius.circular(20)),

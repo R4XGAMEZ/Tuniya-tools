@@ -38,7 +38,7 @@ Format (strictly follow this):
    Answer: [correct option letter]
 
 2. ...''';
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _result = r);
     } catch (e) {

@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
-import 'package:pdfx/pdfx.dart' show PdfDocument, PdfPage, PdfPageImageFormat;
+import 'package:pdfx/pdfx.dart' as pdfx show PdfDocument, PdfPage, PdfPageImageFormat;
 import 'package:share_plus/share_plus.dart';
 import '../theme/app_theme.dart';
 import '../widgets/common_widgets.dart';
@@ -33,7 +33,7 @@ class _PdfSplitterScreenState extends BaseToolScreenState<PdfSplitterScreen> {
     if (result == null) return;
     setLoading(true);
     try {
-      final doc = await PdfDocument.openFile(result.files.single.path!);
+      final doc = await pdfx.PdfDocument.openFile(result.files.single.path!);
       if (!mounted) return;
       setState(() {
         _filePath = result.files.single.path;
@@ -94,7 +94,7 @@ class _PdfSplitterScreenState extends BaseToolScreenState<PdfSplitterScreen> {
       for (int ri = 0; ri < ranges.length; ri++) {
         final range = ranges[ri];
         final from = range[0], to = range[1];
-        final doc = await PdfDocument.openData(srcBytes);
+        final doc = await pdfx.PdfDocument.openData(srcBytes);
         final newPdf = pw.Document();
 
         for (int p = from; p <= to; p++) {

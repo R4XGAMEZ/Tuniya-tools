@@ -126,7 +126,7 @@ class _AiResumeScreenState extends State<AiResumeScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Text('Your Resume', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 13)),
               GestureDetector(
-                onPressed: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Resume copied!'); },
+                onTap: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Resume copied!'); },
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(gradient: AppTheme.brandGradient, borderRadius: BorderRadius.circular(20)),

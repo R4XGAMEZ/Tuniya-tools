@@ -83,7 +83,7 @@ class _AiImageGenScreenState extends State<AiImageGenScreen> {
         title: Text('AI Image Generator', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 16)),
         actions: [
           if (_imageBytes != null)
-            IconButton(icon: const Icon(Icons.download, color: AppTheme.purple), onPressed: _saveImage),
+            IconButton(icon: const Icon(Icons.download, color: AppTheme.purple), onTap: _saveImage),
         ],
       ),
       body: SingleChildScrollView(
@@ -101,7 +101,7 @@ class _AiImageGenScreenState extends State<AiImageGenScreen> {
               itemCount: _promptIdeas.length,
               separatorBuilder: (_, __) => const SizedBox(width: 8),
               itemBuilder: (ctx, i) => GestureDetector(
-                onPressed: () => setState(() => _promptCtrl.text = _promptIdeas[i]),
+                onTap: () => setState(() => _promptCtrl.text = _promptIdeas[i]),
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(20), border: Border.all(color: AppTheme.borderColor)),
