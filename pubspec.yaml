@@ -40,7 +40,7 @@ dependencies:
   image_cropper: ^10.0.0+1
 
   # Media - using safe LTS version
-  ffmpeg_kit_flutter_new: ^4.1.0
+  
 
   # File
   file_picker: ^8.1.4
