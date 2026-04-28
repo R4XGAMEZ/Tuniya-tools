@@ -22,64 +22,18 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Fix known issues
+      - name: Fix dependencies
         run: |
+          sed -i 's/pdfx:.*/pdfx: 2.6.0/' pubspec.yaml
           sed -i 's/ffmpeg_kit_flutter_min:.*/ffmpeg_kit_flutter_new: ^4.1.0/' pubspec.yaml
-          sed -i 's/image_cropper: \^7.1.0/image_cropper: ^5.0.1/' pubspec.yaml
-          sed -i 's/open_file: \^3.5.7/open_file: ^3.3.2/' pubspec.yaml
-          sed -i 's/pdfx: \^2.7.0/pdfx: ^2.6.0/' pubspec.yaml
+          sed -i 's/image_cropper:.*/image_cropper: ^5.0.1/' pubspec.yaml
+          sed -i 's/open_file:.*/open_file: ^3.3.2/' pubspec.yaml
 
       - name: Flutter pub get
         run: flutter pub get
 
       - name: Build APK
-        id: build
         run: flutter build apk --release
-        continue-on-error: true
-
-      - name: AI Auto Fix (if build failed)
-        if: steps.build.outcome == 'failure'
-        env:
-          OPENAI_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          # Get last build error
-          ERROR=$(flutter build apk --release 2>&1 | tail -50)
-          
-          # Send to Claude API
-          RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
-            -H "x-api-key: $ANTHROPIC_API_KEY" \
-            -H "anthropic-version: 2023-06-01" \
-            -H "content-type: application/json" \
-            -d "{
-              \"model\": \"claude-sonnet-4-6\",
-              \"max_tokens\": 1024,
-              \"messages\": [{
-                \"role\": \"user\",
-                \"content\": \"You are a Flutter build error fixer. I have this error:\n\n$ERROR\n\nGive me ONLY bash commands (sed, etc.) to fix pubspec.yaml or build files. No explanation, no markdown, just raw bash commands only, one per line, max 5 commands.\"
-              }]
-            }")
-          
-          # Extract fix commands
-          FIX=$(echo $RESPONSE | python3 -c "
-          import sys, json
-          data = json.load(sys.stdin)
-          print(data['content'][0]['text'])
-          ")
-          
-          echo "=== AI Fix Commands ==="
-          echo "$FIX"
-          
-          # Apply fix
-          eval "$FIX"
-          
-          echo "=== Fixed pubspec.yaml ==="
-          cat pubspec.yaml | grep -E "ffmpeg|pdfx|image_cropper|open_file"
-
-      - name: Rebuild after AI fix
-        if: steps.build.outcome == 'failure'
-        run: |
-          flutter pub get
-          flutter build apk --release
 
       - uses: actions/upload-artifact@v4
         with:
