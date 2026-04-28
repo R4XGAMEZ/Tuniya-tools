@@ -1,3 +1,5 @@
+import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -178,7 +180,7 @@ class _LoremIpsumScreenState extends BaseToolScreenState<LoremIpsumScreen> {
               IconButton(
                 icon: const Icon(Icons.share_outlined, size: 18),
                 color: AppTheme.textSecondary,
-                onPressed: () => SharePlus.instance.share(ShareParams(text: _output)),
+                onPressed: () => Share.shareWithResult(_output),
               ),
               IconButton(
                 icon: const Icon(Icons.refresh_outlined, size: 18),

@@ -1,3 +1,5 @@
+import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -208,7 +210,7 @@ class _TextToPdfScreenState extends BaseToolScreenState<TextToPdfScreen> {
           )),
           const SizedBox(width: 10),
           Expanded(child: OutlinedButton.icon(
-            onPressed: () => SharePlus.instance.share(ShareParams(files: [XFile(_savedPath!)])),
+            onPressed: () => Share.shareXFiles([XFile(_savedPath!)]),
             icon: const Icon(Icons.share_outlined, size: 16),
             label: Text('Share', style: GoogleFonts.rajdhani()),
             style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple,

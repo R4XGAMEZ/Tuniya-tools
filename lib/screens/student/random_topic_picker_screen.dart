@@ -12,7 +12,7 @@ class RandomTopicPickerScreen extends StatefulWidget {
 class _RandomTopicPickerScreenState extends State<RandomTopicPickerScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _ctrl;
-  late Animation<double> _spin;
+  late Animation<double> _spinAnim;
   bool _spinning = false;
   String? _picked;
   String _category = 'All';
@@ -81,7 +81,7 @@ class _RandomTopicPickerScreenState extends State<RandomTopicPickerScreen>
   final _rng = Random();
   Map<String, String>? _pickedTopic;
 
-  Future<void> _spin() async {
+  Future<void> _spinFunc() async {
     if (_spinning) return;
     setState(() { _spinning = true; _picked = null; _pickedTopic = null; });
     _ctrl.reset();

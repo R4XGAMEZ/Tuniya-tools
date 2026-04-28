@@ -1,3 +1,5 @@
+import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,7 +7,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 import 'package:share_plus/share_plus.dart';
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
 import '../base_tool_screen.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/common_widgets.dart';
@@ -106,7 +107,7 @@ class _VolumeBoosterScreenState extends BaseToolScreenState<VolumeBoosterScreen>
               const Icon(Icons.check_circle, color: Colors.green),
               const SizedBox(width: 10),
               Expanded(child: Text('Volume boosted! 🔊', style: GoogleFonts.inter(color: Colors.green))),
-              ElevatedButton(onPressed: () => SharePlus.instance.share(ShareParams(files: [XFile(_outputPath!)])), style: ElevatedButton.styleFrom(backgroundColor: AppTheme.purple), child: const Icon(Icons.share)),
+              ElevatedButton(onPressed: () => Share.shareXFiles([XFile(_outputPath!)]), style: ElevatedButton.styleFrom(backgroundColor: AppTheme.purple), child: const Icon(Icons.share)),
             ]),
           ),
           const SizedBox(height: 16),

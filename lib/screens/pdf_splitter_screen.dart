@@ -1,10 +1,12 @@
+import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:pdf/pdf.dart';
+
 import 'package:pdf/widgets.dart' as pw;
 import 'package:pdfx/pdfx.dart';
 import 'package:share_plus/share_plus.dart';
@@ -282,7 +284,7 @@ class _PdfSplitterScreenState extends BaseToolScreenState<PdfSplitterScreen> {
                   IconButton(
                     icon: const Icon(Icons.share_outlined, size: 18),
                     color: AppTheme.purple,
-                    onPressed: () => SharePlus.instance.share(ShareParams(files: [XFile(path)])),
+                    onPressed: () => Share.shareXFiles([XFile(path)]),
                     padding: EdgeInsets.zero, constraints: const BoxConstraints(),
                   ),
                 ]),

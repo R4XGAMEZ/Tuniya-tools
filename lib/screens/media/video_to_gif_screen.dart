@@ -1,3 +1,5 @@
+import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,7 +7,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 import 'package:share_plus/share_plus.dart';
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
 import '../base_tool_screen.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/common_widgets.dart';
@@ -94,7 +95,7 @@ class _VideoToGifScreenState extends BaseToolScreenState<VideoToGifScreen> {
               const SizedBox(height: 6),
               Text('GIF Ready!', style: GoogleFonts.inter(color: Colors.green, fontWeight: FontWeight.bold)),
               const SizedBox(height: 10),
-              SizedBox(width: double.infinity, child: ElevatedButton.icon(onPressed: () => SharePlus.instance.share(ShareParams(files: [XFile(_outputPath!)])), icon: const Icon(Icons.share), label: Text('Share / Save', style: GoogleFonts.inter()), style: ElevatedButton.styleFrom(backgroundColor: AppTheme.purple, padding: const EdgeInsets.symmetric(vertical: 13)))),
+              SizedBox(width: double.infinity, child: ElevatedButton.icon(onPressed: () => Share.shareXFiles([XFile(_outputPath!)]), icon: const Icon(Icons.share), label: Text('Share / Save', style: GoogleFonts.inter()), style: ElevatedButton.styleFrom(backgroundColor: AppTheme.purple, padding: const EdgeInsets.symmetric(vertical: 13)))),
             ]),
           ),
           const SizedBox(height: 16),

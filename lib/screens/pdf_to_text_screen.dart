@@ -1,3 +1,5 @@
+import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -55,7 +57,7 @@ class _PdfToTextScreenState extends BaseToolScreenState<PdfToTextScreen> {
         if (!mounted) return;
         setState(() => _currentPage = i);
         final page = await doc.getPage(i);
-        final pageText = await page.renderText();
+        
         if (pageText != null && pageText.isNotEmpty) {
           buffer.writeln('─── Page $i ───');
           buffer.writeln(pageText);
@@ -86,7 +88,7 @@ class _PdfToTextScreenState extends BaseToolScreenState<PdfToTextScreen> {
       final file = File('${dir.path}/${name}_text.txt');
       await file.writeAsString(_extractedText);
       showSnack('TXT file save ho gayi!');
-      SharePlus.instance.share(ShareParams(files: [XFile(file.path)]));
+      Share.shareXFiles([XFile(file.path)]);
     } catch (e) {
       setError('Save error: $e');
     }

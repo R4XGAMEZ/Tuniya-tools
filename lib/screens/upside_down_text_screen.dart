@@ -1,3 +1,5 @@
+import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -121,7 +123,7 @@ class _UpsideDownTextScreenState extends BaseToolScreenState<UpsideDownTextScree
               IconButton(icon: const Icon(Icons.copy_outlined, size: 18), color: AppTheme.purple,
                   onPressed: () { Clipboard.setData(ClipboardData(text: _output)); showSnack('Copied!'); }),
               IconButton(icon: const Icon(Icons.share_outlined, size: 18), color: AppTheme.textSecondary,
-                  onPressed: () => SharePlus.instance.share(ShareParams(text: _output))),
+                  onPressed: () => Share.shareWithResult(_output)),
             ]),
           ]),
           Container(

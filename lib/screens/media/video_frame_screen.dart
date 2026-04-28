@@ -1,3 +1,5 @@
+import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,7 +7,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 import 'package:share_plus/share_plus.dart';
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
 import '../base_tool_screen.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/common_widgets.dart';
@@ -104,7 +105,7 @@ class _VideoFrameScreenState extends BaseToolScreenState<VideoFrameScreen> {
               child: Stack(children: [
                 Image.file(File(_frames[i]), fit: BoxFit.cover, width: double.infinity, height: double.infinity),
                 Positioned(bottom: 4, right: 4, child: GestureDetector(
-                  onTap: () => SharePlus.instance.share(ShareParams(files: [XFile(_frames[i])])),
+                  onTap: () => Share.shareXFiles([XFile(_frames[i])]),
                   child: Container(padding: const EdgeInsets.all(6), decoration: BoxDecoration(color: AppTheme.purple, borderRadius: BorderRadius.circular(8)), child: const Icon(Icons.share, color: Colors.white, size: 16)),
                 )),
               ]),

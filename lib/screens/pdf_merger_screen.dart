@@ -1,3 +1,5 @@
+import 'package:share_plus/share_plus.dart';
+import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -231,7 +233,7 @@ class _PdfMergerScreenState extends BaseToolScreenState<PdfMergerScreen> {
                   )),
                   const SizedBox(width: 10),
                   Expanded(child: OutlinedButton.icon(
-                    onPressed: () => SharePlus.instance.share(ShareParams(files: [XFile(_savedPath!)])),
+                    onPressed: () => Share.shareXFiles([XFile(_savedPath!)]),
                     icon: const Icon(Icons.share_outlined, size: 16),
                     label: Text('Share', style: GoogleFonts.rajdhani()),
                     style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple,
