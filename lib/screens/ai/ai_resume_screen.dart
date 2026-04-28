@@ -118,7 +118,7 @@ class _AiResumeScreenState extends State<AiResumeScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Resume ban raha hai...' : 'Generate Resume 📄',
-              onPressed: _loading ? null : _generate,
+              onPressed: _generate,
             ),
           ),
           if (_output.isNotEmpty) ...[

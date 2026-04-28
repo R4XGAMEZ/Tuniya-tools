@@ -118,7 +118,7 @@ class _AiSocialBioScreenState extends State<AiSocialBioScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Bio generate ho raha hai...' : 'Generate 3 Bio Options ✨',
-              onPressed: _loading ? null : _generate,
+              onPressed: _generate,
             ),
           ),
           if (_results.isNotEmpty) ...[

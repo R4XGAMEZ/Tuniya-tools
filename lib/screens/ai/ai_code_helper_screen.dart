@@ -123,7 +123,7 @@ class _AiCodeHelperScreenState extends State<AiCodeHelperScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Claude soch raha hai...' : 'Ask Claude 🤖',
-              onPressed: _loading ? null : _ask,
+              onPressed: _ask,
             ),
           ),
           if (_output.isNotEmpty) ...[

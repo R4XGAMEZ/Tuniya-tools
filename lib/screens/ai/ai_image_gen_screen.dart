@@ -164,7 +164,7 @@ class _AiImageGenScreenState extends State<AiImageGenScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Image ban rahi hai...' : 'Generate Image 🎨',
-              onPressed: _loading ? null : _generate,
+              onPressed: _generate,
             ),
           ),
           const SizedBox(height: 16),

@@ -87,7 +87,7 @@ class _AiGrammarScreenState extends State<AiGrammarScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Fix ho raha hai...' : 'Fix Grammar ✅',
-              onPressed: _loading ? null : _fix,
+              onPressed: _fix,
             ),
           ),
           if (_output.isNotEmpty) ...[

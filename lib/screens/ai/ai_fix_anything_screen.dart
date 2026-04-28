@@ -146,7 +146,7 @@ class _AiFixAnythingScreenState extends State<AiFixAnythingScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Claude kaam kar raha hai...' : 'Let Claude Fix It 🔧',
-              onPressed: _loading ? null : _send,
+              onPressed: _send,
             ),
           ),
           if (_output.isNotEmpty) ...[

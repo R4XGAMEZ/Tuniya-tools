@@ -111,7 +111,7 @@ class _AiTextWriterScreenState extends State<AiTextWriterScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Likh raha hoon...' : 'Generate ✍️',
-              onPressed: _loading ? null : _generate,
+              onPressed: _generate,
             ),
           ),
           if (_output.isNotEmpty) ...[

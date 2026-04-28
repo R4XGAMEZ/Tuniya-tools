@@ -45,7 +45,7 @@ class _DominantColorScreenState extends BaseToolScreenState<DominantColorScreen>
         final x = rng.nextInt(image.width);
         final y = rng.nextInt(image.height);
         final pixel = image.getPixel(x, y);
-        final px = img.getPixel(x, y); final r = (px.r.toInt() ~/ 16) * 16;
+        final px = image.getPixel(x, y); final r = (px.r.toInt() ~/ 16) * 16;
         final g = (px.g.toInt() ~/ 16) * 16;
         final b = (px.b.toInt() ~/ 16) * 16;
         final key = (r << 16) | (g << 8) | b;

@@ -169,7 +169,7 @@ class _AiPdfSummarizerScreenState extends State<AiPdfSummarizerScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Summary ban rahi hai...' : 'Summarize with Claude 📋',
-              onPressed: _loading ? null : _summarize,
+              onPressed: _summarize,
             ),
           ),
           if (_summary.isNotEmpty) ...[

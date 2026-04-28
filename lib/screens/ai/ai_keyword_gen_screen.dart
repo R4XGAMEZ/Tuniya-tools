@@ -101,7 +101,7 @@ class _AiKeywordGenScreenState extends State<AiKeywordGenScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Keywords dhoondh raha hoon...' : 'Generate Keywords 🔖',
-              onPressed: _loading ? null : _generate,
+              onPressed: _generate,
             ),
           ),
           if (_keywords.isNotEmpty) ...[
