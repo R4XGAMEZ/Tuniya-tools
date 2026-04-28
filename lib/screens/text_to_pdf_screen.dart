@@ -208,7 +208,7 @@ class _TextToPdfScreenState extends BaseToolScreenState<TextToPdfScreen> {
           )),
           const SizedBox(width: 10),
           Expanded(child: OutlinedButton.icon(
-            onPressed: () => SharePlus.instance.share(ShareParams(files: [XFile(_savedPath!)])),
+            onPressed: () => Share.shareXFiles([XFile(_savedPath!)]),
             icon: const Icon(Icons.share_outlined, size: 16),
             label: Text('Share', style: GoogleFonts.rajdhani()),
             style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple,

@@ -55,7 +55,7 @@ class _CollageMakerScreenState extends BaseToolScreenState<CollageMakerScreen> {
       final dir = await getTemporaryDirectory();
       final out = p.join(dir.path, 'collage_${DateTime.now().millisecondsSinceEpoch}.png');
       await File(out).writeAsBytes(byteData.buffer.asUint8List());
-      await SharePlus.instance.share(ShareParams(files: [XFile(out)]));
+      await Share.shareXFiles([XFile(out)]);
     } catch (e) { setError('Error: $e'); }
     setLoading(false);
   }
