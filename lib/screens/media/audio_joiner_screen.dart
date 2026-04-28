@@ -99,7 +99,7 @@ class _AudioJoinerScreenState extends BaseToolScreenState<AudioJoinerScreen> {
                 onReorder: _reorder,
                 children: _files.asMap().entries.map((e) => ListTile(
                   key: ValueKey(e.key),
-                  leading: CircleAvatar(backgroundColor: AppTheme.purple.withValues(alpha: 0.2), child: Text('${e.key + 1}', style: GoogleFonts.inter(color: AppTheme.purple))),
+                  leading: CircleAvatar(backgroundColor: AppTheme.purple.withOpacity(0.2), child: Text('${e.key + 1}', style: GoogleFonts.inter(color: AppTheme.purple))),
                   title: Text(p.basename(e.value.path), style: GoogleFonts.inter(color: AppTheme.textPrimary, fontSize: 13), overflow: TextOverflow.ellipsis),
                   subtitle: Text(_fmt(e.value), style: GoogleFonts.inter(color: AppTheme.textSecondary, fontSize: 11)),
                   trailing: IconButton(icon: const Icon(Icons.remove_circle_outline, color: Colors.red), onPressed: () => _removeFile(e.key)),

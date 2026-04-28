@@ -91,7 +91,7 @@ class _VolumeBoosterScreenState extends BaseToolScreenState<VolumeBoosterScreen>
         const SizedBox(height: 12),
         if (_gain > 4.0) Container(
           padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(color: Colors.red.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.red.shade700)),
+          decoration: BoxDecoration(color: Colors.red.withOpacity(0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.red.shade700)),
           child: Row(children: [const Icon(Icons.warning_amber, color: Colors.red, size: 18), const SizedBox(width: 8), Expanded(child: Text('Bahut zyada gain se audio distort ho sakta hai!', style: GoogleFonts.inter(color: Colors.red, fontSize: 12)))]),
         ),
         const SizedBox(height: 24),

@@ -149,7 +149,7 @@ BACK: ...''';
               height: 220,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: _flipped ? AppTheme.purple.withValues(alpha: 0.15) : AppTheme.cardBg2,
+                color: _flipped ? AppTheme.purple.withOpacity(0.15) : AppTheme.cardBg2,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: _flipped ? AppTheme.purple : AppTheme.borderColor, width: 2),
               ),

@@ -148,7 +148,7 @@ Generate exactly $_questionCount questions. Only output the questions, no extra 
             if (_submitted)
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(color: AppTheme.purple.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(20)),
+                decoration: BoxDecoration(color: AppTheme.purple.withOpacity(0.2), borderRadius: BorderRadius.circular(20)),
                 child: Text('Score: $_score/${_parsedQuestions.length}',
                     style: GoogleFonts.rajdhani(color: AppTheme.purple, fontWeight: FontWeight.bold, fontSize: 13)),
               ),
@@ -180,9 +180,9 @@ Generate exactly $_questionCount questions. Only output the questions, no extra 
                   final isWrong = _submitted && isSelected && !isCorrect;
                   Color bg = AppTheme.cardBg;
                   Color border = AppTheme.borderColor;
-                  if (isSelected && !_submitted) { bg = AppTheme.purple.withValues(alpha: 0.2); border = AppTheme.purple; }
-                  if (isCorrect) { bg = Colors.green.withValues(alpha: 0.15); border = Colors.green; }
-                  if (isWrong) { bg = AppTheme.red.withValues(alpha: 0.15); border = AppTheme.red; }
+                  if (isSelected && !_submitted) { bg = AppTheme.purple.withOpacity(0.2); border = AppTheme.purple; }
+                  if (isCorrect) { bg = Colors.green.withOpacity(0.15); border = Colors.green; }
+                  if (isWrong) { bg = AppTheme.red.withOpacity(0.15); border = AppTheme.red; }
                   return GestureDetector(
                     onTap: _submitted ? null : () => setState(() => _selected[i] = optKey),
                     child: Container(
@@ -228,7 +228,7 @@ Generate exactly $_questionCount questions. Only output the questions, no extra 
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: _score == _parsedQuestions.length ? Colors.green.withValues(alpha: 0.15) : AppTheme.purple.withValues(alpha: 0.1),
+              color: _score == _parsedQuestions.length ? Colors.green.withOpacity(0.15) : AppTheme.purple.withOpacity(0.1),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: _score == _parsedQuestions.length ? Colors.green : AppTheme.purple),
             ),
@@ -361,7 +361,7 @@ Generate exactly $_questionCount questions. Only output the questions, no extra 
                 decoration: BoxDecoration(
                   color: AppTheme.cardBg2,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
+                  border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
                 ),
                 child: Text(_result, style: GoogleFonts.rajdhani(color: AppTheme.textPrimary, fontSize: 14, height: 1.7)),
               ),

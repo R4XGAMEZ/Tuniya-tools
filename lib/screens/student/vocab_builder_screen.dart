@@ -133,7 +133,7 @@ Keep it concise and student-friendly.''';
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(color: AppTheme.purple.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(16), border: Border.all(color: AppTheme.purple.withValues(alpha: 0.5))),
+            decoration: BoxDecoration(color: AppTheme.purple.withOpacity(0.15), borderRadius: BorderRadius.circular(16), border: Border.all(color: AppTheme.purple.withOpacity(0.5))),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

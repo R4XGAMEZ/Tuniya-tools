@@ -122,7 +122,7 @@ class _RevisionPlannerScreenState extends State<RevisionPlannerScreen> {
                 decoration: BoxDecoration(
                   color: AppTheme.cardBg2,
                   borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
+                  border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -153,7 +153,7 @@ class _RevisionPlannerScreenState extends State<RevisionPlannerScreen> {
                           margin: const EdgeInsets.only(right: 6),
                           padding: const EdgeInsets.symmetric(vertical: 8),
                           decoration: BoxDecoration(
-                            color: sel ? _priorityColor(p).withValues(alpha: 0.25) : AppTheme.cardBg,
+                            color: sel ? _priorityColor(p).withOpacity(0.25) : AppTheme.cardBg,
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(color: sel ? _priorityColor(p) : AppTheme.borderColor),
                           ),
@@ -210,7 +210,7 @@ class _RevisionPlannerScreenState extends State<RevisionPlannerScreen> {
                       const SizedBox(height: 12),
                       Text('Koi topic nahi add kiya abhi', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 14)),
                       const SizedBox(height: 6),
-                      Text('+ button se topic add karo', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary.withValues(alpha: 0.6), fontSize: 12)),
+                      Text('+ button se topic add karo', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary.withOpacity(0.6), fontSize: 12)),
                     ],
                   ),
                 ),
@@ -260,9 +260,9 @@ class _RevisionPlannerScreenState extends State<RevisionPlannerScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 12),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
+        color: color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: color.withOpacity(0.3)),
       ),
       child: Column(
         children: [
@@ -289,9 +289,9 @@ class _RevisionPlannerScreenState extends State<RevisionPlannerScreen> {
       margin: const EdgeInsets.only(bottom: 8),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: isDone ? AppTheme.cardBg.withValues(alpha: 0.4) : AppTheme.cardBg2,
+        color: isDone ? AppTheme.cardBg.withOpacity(0.4) : AppTheme.cardBg2,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: isDone ? AppTheme.borderColor.withValues(alpha: 0.3) : AppTheme.borderColor),
+        border: Border.all(color: isDone ? AppTheme.borderColor.withOpacity(0.3) : AppTheme.borderColor),
       ),
       child: Row(
         children: [
@@ -301,7 +301,7 @@ class _RevisionPlannerScreenState extends State<RevisionPlannerScreen> {
               width: 24, height: 24,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: isDone ? Colors.green.withValues(alpha: 0.2) : Colors.transparent,
+                color: isDone ? Colors.green.withOpacity(0.2) : Colors.transparent,
                 border: Border.all(color: isDone ? Colors.green : AppTheme.borderColor),
               ),
               child: isDone ? const Icon(Icons.check, size: 14, color: Colors.green) : null,
@@ -330,7 +330,7 @@ class _RevisionPlannerScreenState extends State<RevisionPlannerScreen> {
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                decoration: BoxDecoration(color: _priorityColor(priority).withValues(alpha: 0.15), borderRadius: BorderRadius.circular(10)),
+                decoration: BoxDecoration(color: _priorityColor(priority).withOpacity(0.15), borderRadius: BorderRadius.circular(10)),
                 child: Text(priority, style: GoogleFonts.rajdhani(color: _priorityColor(priority), fontSize: 11, fontWeight: FontWeight.bold)),
               ),
               const SizedBox(height: 4),

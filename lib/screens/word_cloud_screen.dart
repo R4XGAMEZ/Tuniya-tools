@@ -34,7 +34,7 @@ class _WordCloudScreenState extends BaseToolScreenState<WordCloudScreen> {
     'why','how','all','both','each','few','more','most','other',
     'some','such','no','nor','not','only','own','same','so','than',
     'too','very','just','but','and','or','if','as','of',
-    'ki','ka','ke','ko','hai','hain','tha','thi','the','se','me','ne',
+    'ki','ka','ke','ko','hai','hain','tha','thi','se','me','ne',
     'ye','woh','aur','par','mein','kya','jo','koi',
   };
 

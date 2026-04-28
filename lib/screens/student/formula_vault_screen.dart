@@ -152,7 +152,7 @@ class _FormulaVaultScreenState extends State<FormulaVaultScreen> {
                       Expanded(
                         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                           Row(children: [
-                            Container(padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2), decoration: BoxDecoration(color: AppTheme.purple.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(6)), child: Text(f['subject']!, style: GoogleFonts.rajdhani(color: AppTheme.purple, fontSize: 10, fontWeight: FontWeight.bold))),
+                            Container(padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2), decoration: BoxDecoration(color: AppTheme.purple.withOpacity(0.2), borderRadius: BorderRadius.circular(6)), child: Text(f['subject']!, style: GoogleFonts.rajdhani(color: AppTheme.purple, fontSize: 10, fontWeight: FontWeight.bold))),
                             const SizedBox(width: 8),
                             Text(f['name']!, style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 12)),
                           ]),

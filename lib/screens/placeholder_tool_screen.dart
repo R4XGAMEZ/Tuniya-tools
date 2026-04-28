@@ -27,7 +27,7 @@ class PlaceholderToolScreen extends StatelessWidget {
                   gradient: AppTheme.brandGradient,
                   shape: BoxShape.circle,
                   boxShadow: [
-                    BoxShadow(color: AppTheme.purple.withValues(alpha: 0.4), blurRadius: 30),
+                    BoxShadow(color: AppTheme.purple.withOpacity(0.4), blurRadius: 30),
                   ],
                 ),
                 child: Icon(tool?.icon ?? Icons.build_outlined,
@@ -47,9 +47,9 @@ class PlaceholderToolScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 decoration: BoxDecoration(
-                  color: AppTheme.purple.withValues(alpha: 0.1),
+                  color: AppTheme.purple.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
+                  border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
                 ),
                 child: Text('Coming Soon - Under Development',
                     style: GoogleFonts.rajdhani(color: AppTheme.purple, fontSize: 13)),

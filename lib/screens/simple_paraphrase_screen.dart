@@ -228,7 +228,7 @@ class _SimpleParaphraseScreenState
                   fontWeight: FontWeight.bold)),
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(vertical: 14),
-            backgroundColor: _modes[_modeIndex].color.withValues(alpha: 0.9),
+            backgroundColor: _modes[_modeIndex].color.withOpacity(0.9),
           ),
         ),
         const SizedBox(height: 16),
@@ -254,7 +254,7 @@ class _SimpleParaphraseScreenState
               color: AppTheme.cardBg2,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                  color: _modes[_modeIndex].color.withValues(alpha: 0.4)),
+                  color: _modes[_modeIndex].color.withOpacity(0.4)),
             ),
             child: Text(
               _outputCtrl.text,
@@ -301,7 +301,7 @@ class _SimpleParaphraseScreenState
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                 decoration: BoxDecoration(
-                  color: selected ? m.color.withValues(alpha: 0.15) : AppTheme.cardBg,
+                  color: selected ? m.color.withOpacity(0.15) : AppTheme.cardBg,
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
                       color: selected ? m.color : AppTheme.borderColor),
@@ -321,7 +321,7 @@ class _SimpleParaphraseScreenState
         const SizedBox(height: 8),
         Text(_modes[_modeIndex].desc,
             style: GoogleFonts.rajdhani(
-                color: AppTheme.textSecondary.withValues(alpha: 0.7), fontSize: 11)),
+                color: AppTheme.textSecondary.withOpacity(0.7), fontSize: 11)),
       ]),
     );
   }

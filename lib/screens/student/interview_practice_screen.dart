@@ -127,7 +127,7 @@ Use simple Hindi/English mix.''';
               const SizedBox(height: 16),
               Container(
                 width: double.infinity, padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(12), border: Border.all(color: AppTheme.purple.withValues(alpha: 0.5))),
+                decoration: BoxDecoration(color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(12), border: Border.all(color: AppTheme.purple.withOpacity(0.5))),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Row(children: [const Icon(Icons.person_outlined, color: AppTheme.purple, size: 18), const SizedBox(width: 6), Text('Interviewer', style: GoogleFonts.rajdhani(color: AppTheme.purple, fontSize: 12, fontWeight: FontWeight.bold))]),
                   const SizedBox(height: 8),
@@ -160,7 +160,7 @@ Use simple Hindi/English mix.''';
                 const SizedBox(height: 12),
                 Container(
                   width: double.infinity, padding: const EdgeInsets.all(14),
-                  decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.07), borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.green.withValues(alpha: 0.4))),
+                  decoration: BoxDecoration(color: Colors.green.withOpacity(0.07), borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.green.withOpacity(0.4))),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Text('AI Feedback', style: GoogleFonts.rajdhani(color: Colors.green, fontSize: 12, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 8),

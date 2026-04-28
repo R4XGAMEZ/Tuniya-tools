@@ -211,9 +211,9 @@ class _HtmlToMarkdownScreenState extends BaseToolScreenState<HtmlToMarkdownScree
               .map((tag) => Container(
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                 decoration: BoxDecoration(
-                  color: AppTheme.purple.withValues(alpha: 0.15),
+                  color: AppTheme.purple.withOpacity(0.15),
                   borderRadius: BorderRadius.circular(4),
-                  border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
+                  border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
                 ),
                 child: Text('<$tag>',
                     style: GoogleFonts.sourceCodePro(
@@ -248,7 +248,7 @@ class _HtmlToMarkdownScreenState extends BaseToolScreenState<HtmlToMarkdownScree
             decoration: BoxDecoration(
               color: const Color(0xFF0D1117),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
+              border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
             ),
             child: SelectableText(
               _output,

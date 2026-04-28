@@ -155,9 +155,9 @@ class _RegexTesterScreenState extends BaseToolScreenState<RegexTesterScreen> {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.red.withValues(alpha: 0.1),
+              color: Colors.red.withOpacity(0.1),
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.red.withValues(alpha: 0.4)),
+              border: Border.all(color: Colors.red.withOpacity(0.4)),
             ),
             child: Text(_error,
                 style: GoogleFonts.rajdhani(color: Colors.redAccent, fontSize: 13)),
@@ -169,9 +169,9 @@ class _RegexTesterScreenState extends BaseToolScreenState<RegexTesterScreen> {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.green.withValues(alpha: 0.1),
+              color: Colors.green.withOpacity(0.1),
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.green.withValues(alpha: 0.4)),
+              border: Border.all(color: Colors.green.withOpacity(0.4)),
             ),
             child: Row(children: [
               const Icon(Icons.check_circle_outline, color: Colors.greenAccent, size: 18),
@@ -241,9 +241,9 @@ class _RegexTesterScreenState extends BaseToolScreenState<RegexTesterScreen> {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.orange.withValues(alpha: 0.1),
+              color: Colors.orange.withOpacity(0.1),
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.orange.withValues(alpha: 0.4)),
+              border: Border.all(color: Colors.orange.withOpacity(0.4)),
             ),
             child: Row(children: [
               const Icon(Icons.search_off_outlined, color: Colors.orange, size: 18),

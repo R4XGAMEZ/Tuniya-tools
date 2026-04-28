@@ -185,7 +185,7 @@ class _SqlFormatterScreenState extends BaseToolScreenState<SqlFormatterScreen> {
             decoration: BoxDecoration(
               color: const Color(0xFF0D1117),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
+              border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
             ),
             child: SelectableText(
               _output,

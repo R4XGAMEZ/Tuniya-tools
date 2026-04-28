@@ -43,7 +43,7 @@ class GradientButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.purple.withValues(alpha: 0.4),
+            color: AppTheme.purple.withOpacity(0.4),
             blurRadius: 16,
             offset: const Offset(0, 6),
           ),
@@ -120,7 +120,7 @@ class ToolCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
-                      color: AppTheme.purple.withValues(alpha: 0.15),
+                      color: AppTheme.purple.withOpacity(0.15),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Text(
@@ -163,7 +163,7 @@ class ToolCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                 decoration: BoxDecoration(
                   color: (tool.needsGemini ? Colors.blue : AppTheme.red)
-                      .withValues(alpha: 0.15),
+                      .withOpacity(0.15),
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
@@ -239,9 +239,9 @@ class ApiWarningBanner extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: AppTheme.red.withValues(alpha: 0.1),
+        color: AppTheme.red.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppTheme.red.withValues(alpha: 0.3)),
+        border: Border.all(color: AppTheme.red.withOpacity(0.3)),
       ),
       child: Row(
         children: [

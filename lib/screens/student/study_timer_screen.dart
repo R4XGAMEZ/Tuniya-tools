@@ -92,7 +92,7 @@ class _StudyTimerScreenState extends State<StudyTimerScreen> {
             // Mode label
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
-              decoration: BoxDecoration(color: color.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(20), border: Border.all(color: color)),
+              decoration: BoxDecoration(color: color.withOpacity(0.15), borderRadius: BorderRadius.circular(20), border: Border.all(color: color)),
               child: Text(_isFocus ? '🎯 Focus Time' : '☕ Break Time', style: GoogleFonts.rajdhani(color: color, fontWeight: FontWeight.bold, fontSize: 14)),
             ),
             const SizedBox(height: 30),
