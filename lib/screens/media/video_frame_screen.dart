@@ -105,14 +105,14 @@ class _VideoFrameScreenState extends BaseToolScreenState<VideoFrameScreen> {
               child: Stack(children: [
                 Image.file(File(_frames[i]), fit: BoxFit.cover, width: double.infinity, height: double.infinity),
                 Positioned(bottom: 4, right: 4, child: GestureDetector(
-                  onTap: () => SharePlus.instance.share(ShareParams(files: [XFile(_frames[i])])),
+                  onTap: () => Share.shareXFiles([XFile(_frames[i])]),
                   child: Container(padding: const EdgeInsets.all(6), decoration: BoxDecoration(color: AppTheme.purple, borderRadius: BorderRadius.circular(8)), child: const Icon(Icons.share, color: Colors.white, size: 16)),
                 )),
               ]),
             ),
           ),
           const SizedBox(height: 10),
-          SizedBox(width: double.infinity, child: OutlinedButton.icon(onPressed: () => SharePlus.instance.share(ShareParams(files: _frames.map((f) => XFile(f)).toList())), icon: const Icon(Icons.share), label: Text('Sab Share Karo', style: GoogleFonts.inter()), style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple, side: BorderSide(color: AppTheme.purple), padding: const EdgeInsets.symmetric(vertical: 13)))),
+          SizedBox(width: double.infinity, child: OutlinedButton.icon(onPressed: () => Share.shareXFiles(_frames.map((f) => XFile(f)).toList()), icon: const Icon(Icons.share), label: Text('Sab Share Karo', style: GoogleFonts.inter()), style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple, side: BorderSide(color: AppTheme.purple), padding: const EdgeInsets.symmetric(vertical: 13)))),
           const SizedBox(height: 16),
         ],
 
