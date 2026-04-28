@@ -29,7 +29,7 @@ dependencies:
 
   # PDF
   pdf: ^3.11.1
-  pdfx: ^2.7.0
+  pdfx: ^2.6.0
 
   # Archive (ZIP/JAR)
   archive: ^3.6.1
