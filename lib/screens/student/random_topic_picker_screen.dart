@@ -138,11 +138,11 @@ class _RandomTopicPickerScreenState extends State<RandomTopicPickerScreen>
             }).toList()),
             const SizedBox(height: 32),
             GestureDetector(
-              onTap: _spin,
+              onTap: _spinFunc,
               child: AnimatedBuilder(
-                animation: _spin,
+                animation: _spinAnim,
                 builder: (_, child) => Transform.rotate(
-                  angle: _spinning ? _spin.value * 2 * pi * 3 : 0,
+                  angle: _spinning ? _spinAnim.value * 2 * pi * 3 : 0,
                   child: child,
                 ),
                 child: Container(
@@ -197,7 +197,7 @@ class _RandomTopicPickerScreenState extends State<RandomTopicPickerScreen>
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton.icon(
-                  onPressed: _spin,
+                  onPressed: _spinFunc,
                   icon: const Icon(Icons.refresh, size: 16),
                   label: Text('Pick Again', style: GoogleFonts.rajdhani(fontSize: 14)),
                   style: OutlinedButton.styleFrom(
