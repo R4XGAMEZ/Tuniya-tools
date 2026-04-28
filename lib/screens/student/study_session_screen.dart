@@ -39,7 +39,7 @@ Include:
 - End-of-session review tasks
 
 Use emojis for visual appeal. Hindi/English mix okay.''';
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _result = r);
     } catch (e) {

@@ -100,7 +100,7 @@ class _RandomTopicPickerScreenState extends State<RandomTopicPickerScreen>
   void initState() {
     super.initState();
     _ctrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 1200));
-    _spin = CurvedAnimation(parent: _ctrl, curve: Curves.easeInOut);
+    _spinAnim = CurvedAnimation(parent: _ctrl, curve: Curves.easeInOut);
   }
 
   @override
@@ -138,7 +138,7 @@ class _RandomTopicPickerScreenState extends State<RandomTopicPickerScreen>
             }).toList()),
             const SizedBox(height: 32),
             GestureDetector(
-              onTap: _spinFunc,
+              onTap: _spin,
               child: AnimatedBuilder(
                 animation: _spinAnim,
                 builder: (_, child) => Transform.rotate(
@@ -197,7 +197,7 @@ class _RandomTopicPickerScreenState extends State<RandomTopicPickerScreen>
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton.icon(
-                  onPressed: _spinFunc,
+                  onPressed: _spin,
                   icon: const Icon(Icons.refresh, size: 16),
                   label: Text('Pick Again', style: GoogleFonts.rajdhani(fontSize: 14)),
                   style: OutlinedButton.styleFrom(

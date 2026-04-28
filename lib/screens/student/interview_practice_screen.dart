@@ -30,7 +30,7 @@ class _InterviewPracticeScreenState extends State<InterviewPracticeScreen> {
     setState(() { _loadingQ = true; _currentQ = ''; _feedback = ''; _answered = false; _answerCtrl.clear(); });
     try {
       final prompt = 'Give me ONE interview question for a $_level $_field position. Just the question, nothing else.';
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _currentQ = r.trim());
     } catch (e) {
@@ -58,7 +58,7 @@ Give constructive feedback:
 4. Overall rating: X/10
 
 Use simple Hindi/English mix.''';
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() { _feedback = r; _answered = true; });
     } catch (e) {

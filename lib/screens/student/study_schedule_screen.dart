@@ -45,7 +45,7 @@ Make a day-wise schedule with:
 - Weekly targets
 
 Format it clearly with days and times. Use simple Hindi/English mix.''';
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _result = r);
     } catch (e) {

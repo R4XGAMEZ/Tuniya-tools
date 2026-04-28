@@ -39,7 +39,7 @@ Top 5 best career paths suggest karo. Har career ke liye:
 5. Best courses/exams
 
 Simple Hindi/English mix mein likho.''';
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _result = r);
     } catch (e) {

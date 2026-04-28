@@ -28,7 +28,7 @@ class _TopicExplainerScreenState extends State<TopicExplainerScreen> {
     setState(() { _loading = true; _result = ''; });
     try {
       final prompt = 'Explain "${_ctrl.text.trim()}" at ${_levelLabels[_level]} level (${_levelDesc[_level]}). Use clear headings, examples, and analogies. Simple Hindi/English mix allowed.';
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _result = r);
     } catch (e) {

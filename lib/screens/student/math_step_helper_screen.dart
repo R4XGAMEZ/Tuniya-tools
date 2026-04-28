@@ -38,7 +38,7 @@ Format:
 - Formulas clearly likho
 - FINAL ANSWER clearly alag se likho
 - Simple Hindi/English mix use karo''';
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() {
         _result = r;

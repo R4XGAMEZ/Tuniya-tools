@@ -83,7 +83,7 @@ class _AiImageGenScreenState extends State<AiImageGenScreen> {
         title: Text('AI Image Generator', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 16)),
         actions: [
           if (_imageBytes != null)
-            IconButton(icon: const Icon(Icons.download, color: AppTheme.purple), onTap: _saveImage),
+            IconButton(icon: const Icon(Icons.download, color: AppTheme.purple), onPressed: _saveImage),
         ],
       ),
       body: SingleChildScrollView(

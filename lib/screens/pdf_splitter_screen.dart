@@ -101,7 +101,7 @@ class _PdfSplitterScreenState extends BaseToolScreenState<PdfSplitterScreen> {
           final page = await doc.getPage(p);
           final img = await page.render(
             width: page.width * 2, height: page.height * 2,
-            format: PdfPageImageFormat.jpeg,
+            format: pdfx.PdfPageImageFormat.jpeg,
           );
           newPdf.addPage(pw.Page(
             pageFormat: PdfPageFormat.a4,

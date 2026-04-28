@@ -34,7 +34,7 @@ ANTONYM: [2-3 antonyms]
 USAGE TIP: [when/how to use it]
 
 Keep it concise and student-friendly.''';
-      final raw = await GeminiService.instance.generateContent(prompt);
+      final raw = await GeminiService.instance.chat(prompt);
       final parsed = _parse(raw, word.trim());
       if (!mounted) return;
       setState(() => _current = parsed);

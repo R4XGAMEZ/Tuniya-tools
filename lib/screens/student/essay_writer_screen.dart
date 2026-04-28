@@ -30,7 +30,7 @@ class _EssayWriterScreenState extends State<EssayWriterScreen> {
     setState(() { _loading = true; _essay = ''; });
     try {
       final prompt = 'Write a $_type essay on: "${_topicCtrl.text.trim()}"\nWord count: approximately $_words words\nLanguage: $_lang\nMake it well-structured with introduction, body paragraphs, and conclusion.';
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _essay = r);
     } catch (e) {

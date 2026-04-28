@@ -67,7 +67,7 @@ $format
 
 Generate exactly $_questionCount questions. Only output the questions, no extra text.''';
 
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() { _result = r; });
 

@@ -43,7 +43,7 @@ Memory Tip: [1 line tip to remember this]
 
 Make it test actual recall, not just recognition. Use blanks, definitions, cause-effect style questions.
 Hindi/English mix okay for tips.''';
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _result = r);
     } catch (e) {

@@ -32,7 +32,7 @@ BACK: [definition or answer]
 
 FRONT: ...
 BACK: ...''';
-      final raw = await GeminiService.instance.generateContent(prompt);
+      final raw = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _cards = _parse(raw));
     } catch (e) {
