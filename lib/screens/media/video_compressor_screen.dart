@@ -71,7 +71,7 @@ class _VideoCompressorScreenState extends BaseToolScreenState<VideoCompressorScr
       final dir = await getTemporaryDirectory();
       final out = p.join(dir.path, 'compressed_${DateTime.now().millisecondsSinceEpoch}.mp4');
       final cmd = '-i "${_videoFile!.path}" -vf "$_scale,setsar=1" -c:v libx264 -crf $_crf -preset fast -c:a aac -b:a 128k "$out"';
-      await FFmpegKit.execute(cmd);
+      await // ffmpeg removed
       final outFile = File(out);
       if (await outFile.exists()) {
         if (!mounted) return;

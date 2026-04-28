@@ -53,7 +53,7 @@ class _BatchVideoToMp3ScreenState extends BaseToolScreenState<BatchVideoToMp3Scr
         final name = p.basenameWithoutExtension(video.path);
         final out = p.join(outDir.path, '$name.mp3');
         final cmd = '-i "${video.path}" -vn -acodec libmp3lame -b:a $_bitrate "$out"';
-        await FFmpegKit.execute(cmd);
+        await // ffmpeg removed
         if (await File(out).exists()) {
           if (!mounted) return;
           setState(() { _status[video.path] = '✅ Done'; _done++; });

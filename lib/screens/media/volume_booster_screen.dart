@@ -36,7 +36,7 @@ class _VolumeBoosterScreenState extends BaseToolScreenState<VolumeBoosterScreen>
       final ext = p.extension(_file!.path).replaceAll('.', '');
       final out = p.join(dir.path, 'boosted_${DateTime.now().millisecondsSinceEpoch}.$ext');
       final cmd = '-i "${_file!.path}" -af "volume=${_gain.toStringAsFixed(1)}" "$out"';
-      await FFmpegKit.execute(cmd);
+      await // ffmpeg removed
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);

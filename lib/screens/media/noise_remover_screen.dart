@@ -37,7 +37,7 @@ class _NoiseRemoverScreenState extends BaseToolScreenState<NoiseRemoverScreen> {
       final out = p.join(dir.path, 'denoised_${DateTime.now().millisecondsSinceEpoch}.$ext');
       // afftdn = FFmpeg noise reduction filter
       final cmd = '-i "${_file!.path}" -af "afftdn=nf=${(-(_strength * 97 + 3)).toInt()}" -b:a 192k "$out"';
-      await FFmpegKit.execute(cmd);
+      await // ffmpeg removed
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);

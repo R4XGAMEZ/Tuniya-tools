@@ -42,7 +42,7 @@ class _SlowedReverbScreenState extends BaseToolScreenState<SlowedReverbScreen> {
       if (_pitchCorrect) af += ',asetrate=44100*$_speed,aresample=44100';
       af += ',aecho=0.8:$reverbWet:60:$reverbDry';
       final cmd = '-i "${_file!.path}" -af "$af" -b:a 192k "$out"';
-      await FFmpegKit.execute(cmd);
+      await // ffmpeg removed
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);

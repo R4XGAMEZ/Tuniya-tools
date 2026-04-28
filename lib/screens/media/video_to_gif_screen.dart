@@ -41,7 +41,7 @@ class _VideoToGifScreenState extends BaseToolScreenState<VideoToGifScreen> {
       final dir = await getTemporaryDirectory();
       final out = p.join(dir.path, 'gif_${DateTime.now().millisecondsSinceEpoch}.gif');
       final cmd = '-ss ${_startSec.toInt()} -t ${_duration.toInt()} -i "${_videoFile!.path}" -vf "fps=$_fps,scale=$_size:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 "$out"';
-      await FFmpegKit.execute(cmd);
+      await // ffmpeg removed
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);
