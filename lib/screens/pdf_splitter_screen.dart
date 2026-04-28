@@ -103,7 +103,7 @@ class _PdfSplitterScreenState extends BaseToolScreenState<PdfSplitterScreen> {
             format: PdfPageImageFormat.jpeg,
           );
           newPdf.addPage(pw.Page(
-            pageFormat: PdfPageFormat(page.width, page.height),
+            pageFormat: PdfPageFormat.a4,
             margin: pw.EdgeInsets.zero,
             build: (_) => pw.Image(pw.MemoryImage(img!.bytes),
                 fit: pw.BoxFit.fill, width: page.width, height: page.height),

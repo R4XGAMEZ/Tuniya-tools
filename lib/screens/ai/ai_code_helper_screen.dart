@@ -71,7 +71,7 @@ class _AiCodeHelperScreenState extends State<AiCodeHelperScreen> {
           Wrap(spacing: 8, runSpacing: 8, children: _modes.map((m) {
             final sel = m == _mode;
             return GestureDetector(
-              onTap: () => setState(() => _mode = m),
+              onPressed: () => setState(() => _mode = m),
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 decoration: BoxDecoration(
@@ -123,7 +123,7 @@ class _AiCodeHelperScreenState extends State<AiCodeHelperScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Claude soch raha hai...' : 'Ask Claude 🤖',
-              onTap: _loading ? null : _ask,
+              onPressed: _loading ? null : _ask,
             ),
           ),
           if (_output.isNotEmpty) ...[
@@ -131,7 +131,7 @@ class _AiCodeHelperScreenState extends State<AiCodeHelperScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Text('Answer', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 13)),
               GestureDetector(
-                onTap: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Copied!'); },
+                onPressed: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Copied!'); },
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(gradient: AppTheme.brandGradient, borderRadius: BorderRadius.circular(20)),

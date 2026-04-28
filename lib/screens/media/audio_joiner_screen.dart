@@ -92,7 +92,6 @@ class _AudioJoinerScreenState extends BaseToolScreenState<AudioJoinerScreen> {
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Text('${_files.length} Files (drag to reorder)', style: GoogleFonts.inter(color: AppTheme.textSecondary, fontSize: 12)),
                 TextButton(onPressed: () => setState(() { _files.clear(); _outputPath = null; }), child: Text('Clear All', style: GoogleFonts.inter(color: AppTheme.red, fontSize: 12))),
-  }
               ]),
               ReorderableListView(
                 shrinkWrap: true, physics: const NeverScrollableScrollPhysics(),

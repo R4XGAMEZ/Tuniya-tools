@@ -83,7 +83,7 @@ class _AiPdfSummarizerScreenState extends State<AiPdfSummarizerScreen> {
           Row(children: [
             Expanded(
               child: GestureDetector(
-                onTap: () => setState(() => _useTextMode = false),
+                onPressed: () => setState(() => _useTextMode = false),
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   decoration: BoxDecoration(
@@ -98,7 +98,7 @@ class _AiPdfSummarizerScreenState extends State<AiPdfSummarizerScreen> {
             ),
             Expanded(
               child: GestureDetector(
-                onTap: () => setState(() => _useTextMode = true),
+                onPressed: () => setState(() => _useTextMode = true),
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   decoration: BoxDecoration(
@@ -115,7 +115,7 @@ class _AiPdfSummarizerScreenState extends State<AiPdfSummarizerScreen> {
           const SizedBox(height: 14),
           if (!_useTextMode) ...[
             GestureDetector(
-              onTap: _pickPdf,
+              onPressed: _pickPdf,
               child: Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(24),
@@ -169,7 +169,7 @@ class _AiPdfSummarizerScreenState extends State<AiPdfSummarizerScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Summary ban rahi hai...' : 'Summarize with Claude 📋',
-              onTap: _loading ? null : _summarize,
+              onPressed: _loading ? null : _summarize,
             ),
           ),
           if (_summary.isNotEmpty) ...[
@@ -177,7 +177,7 @@ class _AiPdfSummarizerScreenState extends State<AiPdfSummarizerScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Text('Summary', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 13)),
               GestureDetector(
-                onTap: () { Clipboard.setData(ClipboardData(text: _summary)); _showSnack('Copied!'); },
+                onPressed: () { Clipboard.setData(ClipboardData(text: _summary)); _showSnack('Copied!'); },
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(gradient: AppTheme.brandGradient, borderRadius: BorderRadius.circular(20)),

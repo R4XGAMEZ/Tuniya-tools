@@ -177,7 +177,7 @@ class _PercentageCalculatorScreenState extends BaseToolScreenState<PercentageCal
     margin: const EdgeInsets.only(top: 20),
     padding: const EdgeInsets.all(20),
     decoration: BoxDecoration(
-      gradient: LinearGradient(colors: [AppTheme.purple.withOpacity(0.2), AppTheme.pink.withOpacity(0.1)]),
+      gradient: LinearGradient(colors: [AppTheme.purple.withOpacity(0.2), AppTheme.purple.withOpacity(0.1)]),
       borderRadius: BorderRadius.circular(16),
       border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
     ),

@@ -111,7 +111,7 @@ class _AiTextWriterScreenState extends State<AiTextWriterScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Likh raha hoon...' : 'Generate ✍️',
-              onTap: _loading ? null : _generate,
+              onPressed: _loading ? null : _generate,
             ),
           ),
           if (_output.isNotEmpty) ...[
@@ -119,7 +119,7 @@ class _AiTextWriterScreenState extends State<AiTextWriterScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Text('Generated Content', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 13)),
               GestureDetector(
-                onTap: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Copied!'); },
+                onPressed: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Copied!'); },
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(gradient: AppTheme.brandGradient, borderRadius: BorderRadius.circular(20)),

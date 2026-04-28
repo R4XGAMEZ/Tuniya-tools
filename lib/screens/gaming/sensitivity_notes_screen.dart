@@ -248,12 +248,6 @@ class _SensCard extends StatelessWidget {
   final VoidCallback onCopy;
   const _SensCard({required this.entry, required this.onDelete, required this.onCopy});
   @override
-  void dispose() {
-    _gameCtrl.dispose();
-    _modeCtrl.dispose();
-    _notesCtrl.dispose();
-    super.dispose();
-  }
 
 
   @override

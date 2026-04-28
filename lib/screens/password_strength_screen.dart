@@ -237,7 +237,7 @@ class _PasswordAnalysis {
 
     return _PasswordAnalysis(
       score: score, label: labels[score], color: colors[score],
-      entropy: entropy, crackTime: crackTime, checks: checks, suggestions: suggestions,
+      entropy: entropy.toDouble(), crackTime: crackTime, checks: checks, suggestions: suggestions,
     );
   }
 }

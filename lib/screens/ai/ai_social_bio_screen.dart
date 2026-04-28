@@ -71,7 +71,7 @@ class _AiSocialBioScreenState extends State<AiSocialBioScreen> {
           Wrap(spacing: 8, runSpacing: 8, children: _platforms.map((p) {
             final sel = p == _platform;
             return GestureDetector(
-              onTap: () => setState(() => _platform = p),
+              onPressed: () => setState(() => _platform = p),
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 decoration: BoxDecoration(
@@ -118,7 +118,7 @@ class _AiSocialBioScreenState extends State<AiSocialBioScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Bio generate ho raha hai...' : 'Generate 3 Bio Options ✨',
-              onTap: _loading ? null : _generate,
+              onPressed: _loading ? null : _generate,
             ),
           ),
           if (_results.isNotEmpty) ...[
@@ -138,7 +138,7 @@ class _AiSocialBioScreenState extends State<AiSocialBioScreen> {
                     child: Text('Option ${e.key + 1}', style: GoogleFonts.rajdhani(color: Colors.white, fontSize: 11)),
                   ),
                   GestureDetector(
-                    onTap: () { Clipboard.setData(ClipboardData(text: e.value)); _showSnack('Bio ${e.key + 1} copied!'); },
+                    onPressed: () { Clipboard.setData(ClipboardData(text: e.value)); _showSnack('Bio ${e.key + 1} copied!'); },
                     child: const Icon(Icons.copy, color: AppTheme.textSecondary, size: 18),
                   ),
                 ]),

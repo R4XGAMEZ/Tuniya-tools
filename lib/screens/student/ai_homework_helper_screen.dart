@@ -27,7 +27,7 @@ class _AiHomeworkHelperScreenState extends State<AiHomeworkHelperScreen> {
     setState(() { _loading = true; _answer = ''; });
     try {
       final prompt = 'Tum ek expert $_subject teacher ho. Is question ka step-by-step solution do, easy Hindi/English mix mein:\n\nQuestion: $q\n\nHar step clearly explain karo aur final answer bold karo.';
-      final result = await GeminiService.instance.generateContent(prompt);
+      final result = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _answer = result);
     } catch (e) {

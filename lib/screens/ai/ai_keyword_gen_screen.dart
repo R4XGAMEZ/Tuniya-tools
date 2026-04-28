@@ -68,7 +68,7 @@ class _AiKeywordGenScreenState extends State<AiKeywordGenScreen> {
           Wrap(spacing: 8, runSpacing: 8, children: _platforms.map((p) {
             final sel = p == _platform;
             return GestureDetector(
-              onTap: () => setState(() => _platform = p),
+              onPressed: () => setState(() => _platform = p),
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 decoration: BoxDecoration(
@@ -101,7 +101,7 @@ class _AiKeywordGenScreenState extends State<AiKeywordGenScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Keywords dhoondh raha hoon...' : 'Generate Keywords 🔖',
-              onTap: _loading ? null : _generate,
+              onPressed: _loading ? null : _generate,
             ),
           ),
           if (_keywords.isNotEmpty) ...[
@@ -109,7 +109,7 @@ class _AiKeywordGenScreenState extends State<AiKeywordGenScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Text('${_keywords.length} Keywords', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 13)),
               GestureDetector(
-                onTap: () { Clipboard.setData(ClipboardData(text: _keywords.join(', '))); _showSnack('Saare keywords copy ho gaye!'); },
+                onPressed: () { Clipboard.setData(ClipboardData(text: _keywords.join(', '))); _showSnack('Saare keywords copy ho gaye!'); },
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(gradient: AppTheme.brandGradient, borderRadius: BorderRadius.circular(20)),
@@ -123,7 +123,7 @@ class _AiKeywordGenScreenState extends State<AiKeywordGenScreen> {
             ]),
             const SizedBox(height: 12),
             Wrap(spacing: 8, runSpacing: 8, children: _keywords.map((k) => GestureDetector(
-              onTap: () { Clipboard.setData(ClipboardData(text: k)); _showSnack('Copied: $k'); },
+              onPressed: () { Clipboard.setData(ClipboardData(text: k)); _showSnack('Copied: $k'); },
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(

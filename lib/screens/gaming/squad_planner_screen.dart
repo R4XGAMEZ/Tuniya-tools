@@ -306,13 +306,6 @@ class _NoteCard extends StatelessWidget {
   final VoidCallback onDelete;
   const _NoteCard({required this.text, required this.date, required this.icon, required this.onDelete});
   @override
-  void dispose() {
-    _nameCtrl.dispose();
-    _uIdCtrl.dispose();
-    _sessionCtrl.dispose();
-    _stratCtrl.dispose();
-    super.dispose();
-  }
 
 
   @override

@@ -101,7 +101,7 @@ class _AiImageGenScreenState extends State<AiImageGenScreen> {
               itemCount: _promptIdeas.length,
               separatorBuilder: (_, __) => const SizedBox(width: 8),
               itemBuilder: (ctx, i) => GestureDetector(
-                onTap: () => setState(() => _promptCtrl.text = _promptIdeas[i]),
+                onPressed: () => setState(() => _promptCtrl.text = _promptIdeas[i]),
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(20), border: Border.all(color: AppTheme.borderColor)),
@@ -164,7 +164,7 @@ class _AiImageGenScreenState extends State<AiImageGenScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Image ban rahi hai...' : 'Generate Image 🎨',
-              onTap: _loading ? null : _generate,
+              onPressed: _loading ? null : _generate,
             ),
           ),
           const SizedBox(height: 16),
@@ -187,7 +187,7 @@ class _AiImageGenScreenState extends State<AiImageGenScreen> {
               const SizedBox(height: 10),
               SizedBox(
                 width: double.infinity,
-                child: GradientButton(label: 'Save to Gallery 💾', onTap: _saveImage),
+                child: GradientButton(label: 'Save to Gallery 💾', onPressed: _saveImage),
               ),
             ]),
         ]),

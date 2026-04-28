@@ -44,7 +44,7 @@ D: [option D]
 ANS: [A/B/C/D]
 
 Q2: ...''';
-      final raw = await GeminiService.instance.generateContent(prompt);
+      final raw = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _questions = _parseQuiz(raw));
     } catch (e) {

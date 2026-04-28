@@ -118,7 +118,7 @@ class _AiResumeScreenState extends State<AiResumeScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Resume ban raha hai...' : 'Generate Resume 📄',
-              onTap: _loading ? null : _generate,
+              onPressed: _loading ? null : _generate,
             ),
           ),
           if (_output.isNotEmpty) ...[
@@ -126,7 +126,7 @@ class _AiResumeScreenState extends State<AiResumeScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Text('Your Resume', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 13)),
               GestureDetector(
-                onTap: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Resume copied!'); },
+                onPressed: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Resume copied!'); },
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(gradient: AppTheme.brandGradient, borderRadius: BorderRadius.circular(20)),

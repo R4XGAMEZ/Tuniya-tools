@@ -16,6 +16,7 @@ class DominantColorScreen extends BaseToolScreen {
 }
 
 class _DominantColorScreenState extends BaseToolScreenState<DominantColorScreen> {
+  String? errorMessage;
   File? _imageFile;
   Color? _dominantColor;
   List<Color> _palette = [];
@@ -44,9 +45,9 @@ class _DominantColorScreenState extends BaseToolScreenState<DominantColorScreen>
         final x = rng.nextInt(image.width);
         final y = rng.nextInt(image.height);
         final pixel = image.getPixel(x, y);
-        final r = (img.getRed(pixel) ~/ 16) * 16;
-        final g = (img.getGreen(pixel) ~/ 16) * 16;
-        final b = (img.getBlue(pixel) ~/ 16) * 16;
+        final px = img.getPixel(x, y); final r = (px.r.toInt() ~/ 16) * 16;
+        final g = (px.g.toInt() ~/ 16) * 16;
+        final b = (px.b.toInt() ~/ 16) * 16;
         final key = (r << 16) | (g << 8) | b;
         freq[key] = (freq[key] ?? 0) + 1;
       }

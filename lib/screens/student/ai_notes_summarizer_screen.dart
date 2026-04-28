@@ -28,7 +28,7 @@ class _AiNotesSummarizerScreenState extends State<AiNotesSummarizerScreen> {
     setState(() { _loading = true; _summary = ''; });
     try {
       final prompt = _modePrompt(text);
-      final result = await GeminiService.instance.generateContent(prompt);
+      final result = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _summary = result);
     } catch (e) {

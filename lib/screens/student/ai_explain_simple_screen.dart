@@ -27,7 +27,7 @@ class _AiExplainSimpleScreenState extends State<AiExplainSimpleScreen> {
     setState(() { _loading = true; _result = ''; });
     try {
       final prompt = 'Explain "$topic" in very simple language as if explaining to a $_level student. Use Hindi/English mix. Use simple words, examples from daily life, and analogies. Keep it short and engaging.';
-      final r = await GeminiService.instance.generateContent(prompt);
+      final r = await GeminiService.instance.chat(prompt);
       if (!mounted) return;
       setState(() => _result = r);
     } catch (e) {

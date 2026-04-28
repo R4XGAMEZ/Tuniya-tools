@@ -94,7 +94,7 @@ class _AiFixAnythingScreenState extends State<AiFixAnythingScreen> {
           Text('Quick Actions', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 13)),
           const SizedBox(height: 8),
           Wrap(spacing: 8, runSpacing: 8, children: _quickPrompts.map((p) => GestureDetector(
-            onTap: () => setState(() => _instrCtrl.text = p),
+            onPressed: () => setState(() => _instrCtrl.text = p),
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
               decoration: BoxDecoration(color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(20), border: Border.all(color: AppTheme.borderColor)),
@@ -119,7 +119,7 @@ class _AiFixAnythingScreenState extends State<AiFixAnythingScreen> {
           const SizedBox(height: 12),
           // Attach file
           GestureDetector(
-            onTap: _pickFile,
+            onPressed: _pickFile,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
               decoration: BoxDecoration(
@@ -134,7 +134,7 @@ class _AiFixAnythingScreenState extends State<AiFixAnythingScreen> {
                 if (_fileName != null) ...[
                   const SizedBox(width: 8),
                   GestureDetector(
-                    onTap: () => setState(() { _fileName = null; _fileContent = null; }),
+                    onPressed: () => setState(() { _fileName = null; _fileContent = null; }),
                     child: const Icon(Icons.close, color: AppTheme.textSecondary, size: 16),
                   ),
                 ],
@@ -146,7 +146,7 @@ class _AiFixAnythingScreenState extends State<AiFixAnythingScreen> {
             width: double.infinity,
             child: GradientButton(
               label: _loading ? 'Claude kaam kar raha hai...' : 'Let Claude Fix It 🔧',
-              onTap: _loading ? null : _send,
+              onPressed: _loading ? null : _send,
             ),
           ),
           if (_output.isNotEmpty) ...[
@@ -154,7 +154,7 @@ class _AiFixAnythingScreenState extends State<AiFixAnythingScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Text('Result', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 13)),
               GestureDetector(
-                onTap: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Copied!'); },
+                onPressed: () { Clipboard.setData(ClipboardData(text: _output)); _showSnack('Copied!'); },
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(gradient: AppTheme.brandGradient, borderRadius: BorderRadius.circular(20)),
