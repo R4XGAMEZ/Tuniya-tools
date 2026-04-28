@@ -27,9 +27,6 @@ class _AudioJoinerScreenState extends BaseToolScreenState<AudioJoinerScreen> {
     if (r == null) return;
     if (!mounted) return;
     setState(() { _files.addAll(r.files.map((f) => File(f.path!))); _outputPath = null; });
-  }
-
-  if (!mounted) return;
   void _removeFile(int i) => setState(() { _files.removeAt(i); _outputPath = null; });
 
   void _reorder(int oldIndex, int newIndex) {

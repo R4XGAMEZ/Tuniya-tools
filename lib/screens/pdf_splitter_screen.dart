@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
-import 'package:pdfx/pdfx.dart' show PdfDocument, PdfPage;
+import 'package:pdfx/pdfx.dart' show PdfDocument, PdfPage, PdfPageImageFormat;
 import 'package:share_plus/share_plus.dart';
 import '../theme/app_theme.dart';
 import '../widgets/common_widgets.dart';
