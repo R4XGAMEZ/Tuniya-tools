@@ -168,7 +168,7 @@ class _WordCloudScreenState extends BaseToolScreenState<WordCloudScreen> {
             child: Text(
               word,
               style: GoogleFonts.rajdhani(
-                color: color.withValues(alpha: 0.6 + ratio * 0.4),
+                color: color.withOpacity( 0.6 + ratio * 0.4),
                 fontSize: size,
                 fontWeight: ratio > 0.5 ? FontWeight.w700 : FontWeight.w400,
               ),

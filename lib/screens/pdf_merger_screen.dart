@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
-import 'package:pdfx/pdfx.dart';
+import 'package:pdfx/pdfx.dart' as pdfx;
 import 'package:share_plus/share_plus.dart';
 import '../theme/app_theme.dart';
 import '../widgets/common_widgets.dart';
@@ -33,7 +33,7 @@ class _PdfMergerScreenState extends BaseToolScreenState<PdfMergerScreen> {
     setLoading(true);
     for (final f in result.files) {
       try {
-        final doc = await PdfDocument.openFile(f.path!);
+        final doc = await pdfx.PdfDocument.openFile(f.path!);
         if (!mounted) return;
         setState(() => _pdfs.add(_PdfEntry(
           path: f.path!,
@@ -76,7 +76,7 @@ class _PdfMergerScreenState extends BaseToolScreenState<PdfMergerScreen> {
       for (final entry in _pdfs) {
         final bytes = await File(entry.path).readAsBytes();
         // Embed each PDF as an image page (simple approach without pdf_manipulator)
-        final doc = await PdfDocument.openData(bytes);
+        final doc = await pdfx.PdfDocument.openData(bytes);
         for (int p = 1; p <= doc.pagesCount; p++) {
           final page = await doc.getPage(p);
           final img = await page.render(

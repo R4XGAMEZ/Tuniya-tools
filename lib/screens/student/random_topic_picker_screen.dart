@@ -12,7 +12,7 @@ class RandomTopicPickerScreen extends StatefulWidget {
 class _RandomTopicPickerScreenState extends State<RandomTopicPickerScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _ctrl;
-  late Animation<double> _spin;
+  late Animation<double> _spinAnim;
   bool _spinning = false;
   String? _picked;
   String _category = 'All';

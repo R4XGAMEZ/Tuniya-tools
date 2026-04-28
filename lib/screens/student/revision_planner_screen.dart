@@ -250,7 +250,8 @@ class _RevisionPlannerScreenState extends State<RevisionPlannerScreen> {
                 return done.isNotEmpty ? [
                   _sectionHeader('✅ Completed', Colors.green),
                   ...done.map((t) => _topicCard(t)),
-              ],
+              ] : <Widget>[],
+              }(),
             ],
           ],
         ),

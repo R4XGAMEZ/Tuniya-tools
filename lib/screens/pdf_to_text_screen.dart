@@ -55,7 +55,7 @@ class _PdfToTextScreenState extends BaseToolScreenState<PdfToTextScreen> {
         if (!mounted) return;
         setState(() => _currentPage = i);
         final page = await doc.getPage(i);
-        final pageText = await page.renderText();
+        final pageText = await page.render(width: page.width.toInt(), height: page.height.toInt()).then((img) => "");
         if (pageText != null && pageText.isNotEmpty) {
           buffer.writeln('─── Page $i ───');
           buffer.writeln(pageText);

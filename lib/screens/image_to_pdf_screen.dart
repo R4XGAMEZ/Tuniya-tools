@@ -41,6 +41,8 @@ class _ImageToPdfScreenState extends BaseToolScreenState<ImageToPdfScreen> {
     }
   }
 
+  }
+
   if (!mounted) return;
   void _removeImage(int index) => setState(() => _images.removeAt(index));
 

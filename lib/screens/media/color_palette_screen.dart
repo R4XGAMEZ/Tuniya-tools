@@ -49,9 +49,9 @@ class _ColorPaletteScreenState extends BaseToolScreenState<ColorPaletteScreen> {
         final y = rng.nextInt(h);
         final pixel = image.getPixel(x, y);
         // Quantize to reduce similar colors
-        final r = (img.getRed(pixel) ~/ 32) * 32;
-        final g = (img.getGreen(pixel) ~/ 32) * 32;
-        final b = (img.getBlue(pixel) ~/ 32) * 32;
+        final r = (img.getPixel(x, y).r.toInt() ~/ 32) * 32;
+        final g = (img.getPixel(x, y).g.toInt() ~/ 32) * 32;
+        final b = (img.getPixel(x, y).b.toInt() ~/ 32) * 32;
         final key = (r << 16) | (g << 8) | b;
         colorFreq[key] = (colorFreq[key] ?? 0) + 1;
       }
