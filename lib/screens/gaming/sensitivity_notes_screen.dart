@@ -153,7 +153,7 @@ class _SensitivityNotesScreenState extends BaseToolScreenState<SensitivityNotesS
       decoration: BoxDecoration(
         color: AppTheme.cardBg2,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
+        border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
       ),
       child: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
@@ -236,7 +236,7 @@ class _SensitivityNotesScreenState extends BaseToolScreenState<SensitivityNotesS
         const SizedBox(height: 6),
         Text('+ New Preset tap karo apni sensitivity save karne ke liye',
             textAlign: TextAlign.center,
-            style: GoogleFonts.rajdhani(color: AppTheme.textSecondary.withValues(alpha: 0.6), fontSize: 13)),
+            style: GoogleFonts.rajdhani(color: AppTheme.textSecondary.withOpacity(0.6), fontSize: 13)),
       ]),
     );
   }
@@ -270,7 +270,7 @@ class _SensCard extends StatelessWidget {
         Container(
           padding: const EdgeInsets.fromLTRB(14, 12, 10, 10),
           decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [AppTheme.purple.withValues(alpha: 0.2), Colors.transparent]),
+            gradient: LinearGradient(colors: [AppTheme.purple.withOpacity(0.2), Colors.transparent]),
             borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
           ),
           child: Row(children: [
@@ -303,7 +303,7 @@ class _SensCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
                   color: AppTheme.cardBg, borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
+                  border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
                 ),
                 child: RichText(text: TextSpan(children: [
                   TextSpan(text: '${e.key}: ', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 11)),
@@ -317,7 +317,7 @@ class _SensCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(14, 0, 14, 12),
             child: Text('📝 ${entry["notes"]}',
-                style: GoogleFonts.rajdhani(color: AppTheme.textSecondary.withValues(alpha: 0.8), fontSize: 12)),
+                style: GoogleFonts.rajdhani(color: AppTheme.textSecondary.withOpacity(0.8), fontSize: 12)),
           )
         else
           const SizedBox(height: 4),

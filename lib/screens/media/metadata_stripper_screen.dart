@@ -92,7 +92,7 @@ class _MetadataStripperScreenState extends BaseToolScreenState<MetadataStripperS
           child: Column(children: [
             // Info banner
             Container(
-              padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: Colors.orange.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.orange.shade700)),
+              padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: Colors.orange.withOpacity(0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.orange.shade700)),
               child: Row(children: [const Icon(Icons.privacy_tip_outlined, color: Colors.orange, size: 18), const SizedBox(width: 8), Expanded(child: Text('GPS location, camera model, date/time — sab remove ho jaayega.', style: GoogleFonts.inter(color: Colors.orange, fontSize: 12)))]),
             ),
             const SizedBox(height: 16),
@@ -134,7 +134,7 @@ class _MetadataStripperScreenState extends BaseToolScreenState<MetadataStripperS
             if (isLoading) ...[const SizedBox(height: 12), LinearProgressIndicator(value: _files.isEmpty ? 0 : _done / _files.length), const SizedBox(height: 8), Text('$_done / ${_files.length} done...', style: GoogleFonts.inter(color: AppTheme.textSecondary))],
             if (!isLoading && _done > 0) ...[
               const SizedBox(height: 12),
-              Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.green.shade700)), child: Row(children: [const Icon(Icons.shield_outlined, color: Colors.green), const SizedBox(width: 8), Expanded(child: Text('$_done files ka metadata remove ho gaya! 🔒', style: GoogleFonts.inter(color: Colors.green, fontSize: 13)))])),
+              Container(padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: Colors.green.withOpacity(0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.green.shade700)), child: Row(children: [const Icon(Icons.shield_outlined, color: Colors.green), const SizedBox(width: 8), Expanded(child: Text('$_done files ka metadata remove ho gaya! 🔒', style: GoogleFonts.inter(color: Colors.green, fontSize: 13)))])),
             ],
             if (errorMessage != null) ...[const SizedBox(height: 8), Text(errorMessage!, style: GoogleFonts.inter(color: Colors.red))],
           ]),

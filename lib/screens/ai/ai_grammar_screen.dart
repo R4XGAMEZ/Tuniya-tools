@@ -61,7 +61,7 @@ class _AiGrammarScreenState extends State<AiGrammarScreen> {
           const SizedBox(height: 8),
           Container(
             padding: const EdgeInsets.all(14),
-            decoration: BoxDecoration(color: AppTheme.cardBg.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(10), border: Border.all(color: AppTheme.purple.withValues(alpha: 0.2))),
+            decoration: BoxDecoration(color: AppTheme.cardBg.withOpacity(0.5), borderRadius: BorderRadius.circular(10), border: Border.all(color: AppTheme.purple.withOpacity(0.2))),
             child: Row(children: [
               const Icon(Icons.spellcheck, color: AppTheme.purple, size: 18),
               const SizedBox(width: 8),
@@ -125,7 +125,7 @@ class _AiGrammarScreenState extends State<AiGrammarScreen> {
               decoration: BoxDecoration(
                 color: AppTheme.cardBg2,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.greenAccent.withValues(alpha: 0.3)),
+                border: Border.all(color: Colors.greenAccent.withOpacity(0.3)),
               ),
               child: SelectableText(_output, style: GoogleFonts.rajdhani(color: AppTheme.textPrimary, fontSize: 15, height: 1.6)),
             ),

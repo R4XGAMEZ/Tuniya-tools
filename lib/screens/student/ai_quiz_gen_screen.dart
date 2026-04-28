@@ -229,8 +229,8 @@ Q2: ...''';
             Color bg = AppTheme.cardBg2;
             Color border = AppTheme.borderColor;
             if (_answered) {
-              if (i == ans) { bg = Colors.green.withValues(alpha: 0.2); border = Colors.green; }
-              else if (i == _selected) { bg = AppTheme.red.withValues(alpha: 0.2); border = AppTheme.red; }
+              if (i == ans) { bg = Colors.green.withOpacity(0.2); border = Colors.green; }
+              else if (i == _selected) { bg = AppTheme.red.withOpacity(0.2); border = AppTheme.red; }
             }
             return GestureDetector(
               onTap: () => _answer(i),

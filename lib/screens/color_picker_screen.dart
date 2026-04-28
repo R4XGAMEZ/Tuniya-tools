@@ -180,7 +180,7 @@ class _ColorPickerScreenState extends BaseToolScreenState<ColorPickerScreen> {
           icon: const Icon(Icons.bookmark_add_outlined, size: 18),
           label: Text('Save Current Color', style: GoogleFonts.rajdhani()),
           style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple,
-              side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.5)),
+              side: BorderSide(color: AppTheme.purple.withOpacity(0.5)),
               padding: const EdgeInsets.all(14)),
         ),
       ]),
@@ -193,7 +193,7 @@ class _ColorPickerScreenState extends BaseToolScreenState<ColorPickerScreen> {
           style: GoogleFonts.rajdhani(color: color, fontSize: 13, fontWeight: FontWeight.bold))),
       Expanded(child: SliderTheme(
         data: SliderTheme.of(context).copyWith(activeTrackColor: color,
-            thumbColor: color, inactiveTrackColor: color.withValues(alpha: 0.2)),
+            thumbColor: color, inactiveTrackColor: color.withOpacity(0.2)),
         child: Slider(value: value, min: 0, max: 255, divisions: 255,
             onChanged: onChanged),
       )),

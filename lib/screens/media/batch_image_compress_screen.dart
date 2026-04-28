@@ -140,7 +140,7 @@ class _BatchImageCompressScreenState extends BaseToolScreenState<BatchImageCompr
 
             if (isLoading) ...[LinearProgressIndicator(value: _images.isEmpty ? 0 : _done / _images.length), const SizedBox(height: 8), Text('$_done / ${_images.length} done...', style: GoogleFonts.inter(color: AppTheme.textSecondary))],
             if (!isLoading && _done > 0) Container(
-              padding: const EdgeInsets.all(14), decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.green.shade700)),
+              padding: const EdgeInsets.all(14), decoration: BoxDecoration(color: Colors.green.withOpacity(0.1), borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.green.shade700)),
               child: Column(children: [
                 Text('$_done images compressed! 🎉', style: GoogleFonts.inter(color: Colors.green, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 4),

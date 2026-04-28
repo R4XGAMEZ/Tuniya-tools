@@ -172,7 +172,7 @@ class _CsvJsonConverterScreenState extends BaseToolScreenState<CsvJsonConverterS
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(color: AppTheme.cardBg2,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4))),
+                border: Border.all(color: AppTheme.purple.withOpacity(0.4))),
             child: SelectableText(_outputCtrl.text,
                 style: GoogleFonts.robotoMono(color: AppTheme.textPrimary, fontSize: 11, height: 1.5)),
           ),

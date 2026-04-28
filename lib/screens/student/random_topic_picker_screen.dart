@@ -151,11 +151,11 @@ class _RandomTopicPickerScreenState extends State<RandomTopicPickerScreen>
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: LinearGradient(
-                      colors: [AppTheme.purple, AppTheme.purple.withValues(alpha: 0.5)],
+                      colors: [AppTheme.purple, AppTheme.purple.withOpacity(0.5)],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
-                    boxShadow: [BoxShadow(color: AppTheme.purple.withValues(alpha: 0.4), blurRadius: 30, spreadRadius: 5)],
+                    boxShadow: [BoxShadow(color: AppTheme.purple.withOpacity(0.4), blurRadius: 30, spreadRadius: 5)],
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -180,8 +180,8 @@ class _RandomTopicPickerScreenState extends State<RandomTopicPickerScreen>
                 decoration: BoxDecoration(
                   color: AppTheme.cardBg2,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: AppTheme.purple.withValues(alpha: 0.6), width: 2),
-                  boxShadow: [BoxShadow(color: AppTheme.purple.withValues(alpha: 0.15), blurRadius: 20)],
+                  border: Border.all(color: AppTheme.purple.withOpacity(0.6), width: 2),
+                  boxShadow: [BoxShadow(color: AppTheme.purple.withOpacity(0.15), blurRadius: 20)],
                 ),
                 child: Column(
                   children: [

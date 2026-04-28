@@ -182,9 +182,9 @@ class _SpeechPaceCheckerScreenState
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
             decoration: BoxDecoration(
-              color: AppTheme.purple.withValues(alpha: 0.15),
+              color: AppTheme.purple.withOpacity(0.15),
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
+              border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
             ),
             child: Text('$_targetMinutes min',
                 style: GoogleFonts.orbitron(
@@ -198,7 +198,7 @@ class _SpeechPaceCheckerScreenState
             activeTrackColor: AppTheme.purple,
             inactiveTrackColor: AppTheme.borderColor,
             thumbColor: AppTheme.purple,
-            overlayColor: AppTheme.purple.withValues(alpha: 0.2),
+            overlayColor: AppTheme.purple.withOpacity(0.2),
             trackHeight: 4,
           ),
           child: Slider(
@@ -229,9 +229,9 @@ class _SpeechPaceCheckerScreenState
       decoration: BoxDecoration(
         color: AppTheme.cardBg2,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: p.color.withValues(alpha: 0.4), width: 1.5),
+        border: Border.all(color: p.color.withOpacity(0.4), width: 1.5),
         gradient: LinearGradient(
-          colors: [p.color.withValues(alpha: 0.08), AppTheme.cardBg2],
+          colors: [p.color.withOpacity(0.08), AppTheme.cardBg2],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -240,7 +240,7 @@ class _SpeechPaceCheckerScreenState
         Container(
           padding: const EdgeInsets.all(14),
           decoration: BoxDecoration(
-            color: p.color.withValues(alpha: 0.15),
+            color: p.color.withOpacity(0.15),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Icon(p.icon, color: p.color, size: 28),
@@ -308,7 +308,7 @@ class _SpeechPaceCheckerScreenState
       Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.12),
+          color: color.withOpacity(0.12),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Icon(icon, color: color, size: 16),
@@ -341,7 +341,7 @@ class _SpeechPaceCheckerScreenState
         Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: c.color.withValues(alpha: 0.12),
+            color: c.color.withOpacity(0.12),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Icon(Icons.account_tree_outlined, color: c.color, size: 20),
@@ -392,7 +392,7 @@ class _SpeechPaceCheckerScreenState
         Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.15),
+            color: color.withOpacity(0.15),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Icon(icon, color: color, size: 18),
@@ -457,7 +457,7 @@ class _SpeechPaceCheckerScreenState
       padding: const EdgeInsets.symmetric(vertical: 40),
       child: Column(children: [
         Icon(Icons.record_voice_over_outlined,
-            color: AppTheme.textSecondary.withValues(alpha: 0.4), size: 56),
+            color: AppTheme.textSecondary.withOpacity(0.4), size: 56),
         const SizedBox(height: 16),
         Text('Speech script paste karo',
             style: GoogleFonts.rajdhani(
@@ -465,7 +465,7 @@ class _SpeechPaceCheckerScreenState
         const SizedBox(height: 6),
         Text('Target time ke hisaab se pace check hogi',
             style: GoogleFonts.rajdhani(
-                color: AppTheme.textSecondary.withValues(alpha: 0.6), fontSize: 13)),
+                color: AppTheme.textSecondary.withOpacity(0.6), fontSize: 13)),
       ]),
     );
   }

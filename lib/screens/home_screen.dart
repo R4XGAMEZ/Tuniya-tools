@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
         width: 22, height: 22,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: active ? color.withValues(alpha: 0.15) : AppTheme.cardBg,
+          color: active ? color.withOpacity(0.15) : AppTheme.cardBg,
           border: Border.all(color: active ? color : AppTheme.borderColor),
         ),
         child: Center(
@@ -225,11 +225,11 @@ class _HomeScreenState extends State<HomeScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [AppTheme.purple.withValues(alpha: 0.15), AppTheme.red.withValues(alpha: 0.1)],
+          colors: [AppTheme.purple.withOpacity(0.15), AppTheme.red.withOpacity(0.1)],
           begin: Alignment.centerLeft, end: Alignment.centerRight,
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
+        border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -397,7 +397,7 @@ class _HomeScreenState extends State<HomeScreen> {
       decoration: BoxDecoration(
         gradient: AppTheme.brandGradient,
         shape: BoxShape.circle,
-        boxShadow: [BoxShadow(color: AppTheme.purple.withValues(alpha: 0.5), blurRadius: 20)],
+        boxShadow: [BoxShadow(color: AppTheme.purple.withOpacity(0.5), blurRadius: 20)],
       ),
       child: FloatingActionButton(
         backgroundColor: Colors.transparent,

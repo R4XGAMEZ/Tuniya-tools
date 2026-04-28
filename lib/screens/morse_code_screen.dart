@@ -124,7 +124,7 @@ class _MorseCodeScreenState extends BaseToolScreenState<MorseCodeScreen> {
             decoration: BoxDecoration(
               color: AppTheme.cardBg2,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
+              border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
             ),
             child: SelectableText(
               _output,
@@ -153,7 +153,7 @@ class _MorseCodeScreenState extends BaseToolScreenState<MorseCodeScreen> {
               spacing: 10, runSpacing: 6,
               children: _map.entries.take(26).map((e) => Text(
                 '${e.key}: ${e.value}',
-                style: GoogleFonts.rajdhani(color: AppTheme.textPrimary.withValues(alpha: 0.7),
+                style: GoogleFonts.rajdhani(color: AppTheme.textPrimary.withOpacity(0.7),
                     fontSize: 11, letterSpacing: 1),
               )).toList(),
             ),

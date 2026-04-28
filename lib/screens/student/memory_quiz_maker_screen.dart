@@ -86,9 +86,9 @@ Hindi/English mix okay for tips.''';
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppTheme.purple.withValues(alpha: 0.1),
+                color: AppTheme.purple.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
+                border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
               ),
               child: Row(
                 children: [
@@ -178,7 +178,7 @@ Hindi/English mix okay for tips.''';
                 decoration: BoxDecoration(
                   color: AppTheme.cardBg2,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
+                  border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
                 ),
                 child: Text(_result, style: GoogleFonts.rajdhani(color: AppTheme.textPrimary, fontSize: 14, height: 1.7)),
               ),

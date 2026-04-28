@@ -111,7 +111,7 @@ class _ClipReminderScreenState extends BaseToolScreenState<ClipReminderScreen>
             borderRadius: BorderRadius.circular(24),
             boxShadow: [
               BoxShadow(
-                color: (_flashing ? Colors.red : AppTheme.purple).withValues(alpha: 0.6),
+                color: (_flashing ? Colors.red : AppTheme.purple).withOpacity(0.6),
                 blurRadius: _flashing ? 40 : 20,
                 spreadRadius: _flashing ? 4 : 0,
               ),
@@ -180,7 +180,7 @@ class _ClipReminderScreenState extends BaseToolScreenState<ClipReminderScreen>
                   duration: const Duration(milliseconds: 150),
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
-                    color: _clipType == t ? AppTheme.purple.withValues(alpha: 0.2) : AppTheme.cardBg,
+                    color: _clipType == t ? AppTheme.purple.withOpacity(0.2) : AppTheme.cardBg,
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(color: _clipType == t ? AppTheme.purple : AppTheme.borderColor),
                   ),
@@ -220,7 +220,7 @@ class _ClipReminderScreenState extends BaseToolScreenState<ClipReminderScreen>
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: AppTheme.purple.withValues(alpha: 0.15),
+                  color: AppTheme.purple.withOpacity(0.15),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Icon(Icons.movie_outlined, color: Colors.purpleAccent, size: 16),
@@ -261,7 +261,7 @@ class _ClipReminderScreenState extends BaseToolScreenState<ClipReminderScreen>
               'Volume button shortcut set karo screen record ke liye',
             ].map((t) => Padding(
               padding: const EdgeInsets.only(bottom: 4),
-              child: Text('• $t', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary.withValues(alpha: 0.7), fontSize: 11)),
+              child: Text('• $t', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary.withOpacity(0.7), fontSize: 11)),
             )),
           ]),
         ),

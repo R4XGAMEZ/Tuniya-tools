@@ -138,7 +138,7 @@ class _BatchVideoToMp3ScreenState extends BaseToolScreenState<BatchVideoToMp3Scr
             if (!_converting && _done > 0) ...[
               const SizedBox(height: 12),
               Container(
-                padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.green.shade700)),
+                padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: Colors.green.withOpacity(0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.green.shade700)),
                 child: Row(children: [const Icon(Icons.folder_outlined, color: Colors.green), const SizedBox(width: 8), Expanded(child: Text('$_done MP3 files saved in TuniyaMP3 folder! 🎵', style: GoogleFonts.inter(color: Colors.green, fontSize: 13)))]),
               ),
             ],

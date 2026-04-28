@@ -181,7 +181,7 @@ class _TextToneDetectorScreenState
       padding: const EdgeInsets.symmetric(vertical: 40),
       child: Column(children: [
         Icon(Icons.psychology_outlined,
-            color: AppTheme.textSecondary.withValues(alpha: 0.4), size: 56),
+            color: AppTheme.textSecondary.withOpacity(0.4), size: 56),
         const SizedBox(height: 16),
         Text('Text likhna shuru karo',
             style: GoogleFonts.rajdhani(
@@ -189,7 +189,7 @@ class _TextToneDetectorScreenState
         const SizedBox(height: 6),
         Text('AI aapke writing ka mood detect karega',
             style: GoogleFonts.rajdhani(
-                color: AppTheme.textSecondary.withValues(alpha: 0.6), fontSize: 13)),
+                color: AppTheme.textSecondary.withOpacity(0.6), fontSize: 13)),
       ]),
     );
   }
@@ -205,9 +205,9 @@ class _TextToneDetectorScreenState
       decoration: BoxDecoration(
         color: AppTheme.cardBg2,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withValues(alpha: 0.4), width: 1.5),
+        border: Border.all(color: color.withOpacity(0.4), width: 1.5),
         gradient: LinearGradient(
-          colors: [color.withValues(alpha: 0.08), AppTheme.cardBg2],
+          colors: [color.withOpacity(0.08), AppTheme.cardBg2],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -216,7 +216,7 @@ class _TextToneDetectorScreenState
         Container(
           padding: const EdgeInsets.all(14),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.15),
+            color: color.withOpacity(0.15),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Icon(icon, color: color, size: 28),

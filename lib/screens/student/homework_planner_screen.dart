@@ -78,7 +78,7 @@ class _HomeworkPlannerScreenState extends State<HomeworkPlannerScreen> {
                   child: Container(
                     margin: const EdgeInsets.only(right: 6),
                     padding: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(color: sel ? _priorityColor(p).withValues(alpha: 0.2) : AppTheme.cardBg2, borderRadius: BorderRadius.circular(10), border: Border.all(color: sel ? _priorityColor(p) : AppTheme.borderColor)),
+                    decoration: BoxDecoration(color: sel ? _priorityColor(p).withOpacity(0.2) : AppTheme.cardBg2, borderRadius: BorderRadius.circular(10), border: Border.all(color: sel ? _priorityColor(p) : AppTheme.borderColor)),
                     child: Center(child: Text(p, style: GoogleFonts.rajdhani(color: sel ? _priorityColor(p) : AppTheme.textPrimary, fontWeight: FontWeight.bold))),
                   ),
                 ));
@@ -149,7 +149,7 @@ class _HomeworkPlannerScreenState extends State<HomeworkPlannerScreen> {
                           child: Container(
                             margin: const EdgeInsets.only(bottom: 10),
                             padding: const EdgeInsets.all(14),
-                            decoration: BoxDecoration(color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(12), border: Border.all(color: done ? AppTheme.borderColor : color.withValues(alpha: 0.4))),
+                            decoration: BoxDecoration(color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(12), border: Border.all(color: done ? AppTheme.borderColor : color.withOpacity(0.4))),
                             child: Row(
                               children: [
                                 Icon(done ? Icons.check_circle : Icons.radio_button_unchecked, color: done ? Colors.green : color, size: 22),
@@ -163,7 +163,7 @@ class _HomeworkPlannerScreenState extends State<HomeworkPlannerScreen> {
                                 ),
                                 Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                                  decoration: BoxDecoration(color: color.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(8)),
+                                  decoration: BoxDecoration(color: color.withOpacity(0.15), borderRadius: BorderRadius.circular(8)),
                                   child: Text(t['priority'] as String, style: GoogleFonts.rajdhani(color: color, fontSize: 11, fontWeight: FontWeight.bold)),
                                 ),
                               ],

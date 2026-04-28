@@ -150,7 +150,7 @@ class _AiCodeHelperScreenState extends State<AiCodeHelperScreen> {
               decoration: BoxDecoration(
                 color: const Color(0xFF0D1117),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
+                border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
               ),
               child: SelectableText(_output, style: GoogleFonts.sourceCodePro(color: const Color(0xFFE6EDF3), fontSize: 13, height: 1.6)),
             ),

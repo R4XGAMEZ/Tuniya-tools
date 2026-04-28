@@ -67,7 +67,7 @@ class _AgeCalculatorScreenState extends BaseToolScreenState<AgeCalculatorScreen>
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: _dob != null ? AppTheme.purple.withValues(alpha: 0.5) : AppTheme.borderColor),
+              border: Border.all(color: _dob != null ? AppTheme.purple.withOpacity(0.5) : AppTheme.borderColor),
             ),
             child: Row(children: [
               Icon(Icons.cake_outlined, color: AppTheme.purple, size: 22),
@@ -92,9 +92,9 @@ class _AgeCalculatorScreenState extends BaseToolScreenState<AgeCalculatorScreen>
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [AppTheme.purple.withValues(alpha: 0.15), AppTheme.red.withValues(alpha: 0.1)]),
+              gradient: LinearGradient(colors: [AppTheme.purple.withOpacity(0.15), AppTheme.red.withOpacity(0.1)]),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
+              border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
             ),
             child: Column(children: [
               Text('Tumhari Umar', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 14)),

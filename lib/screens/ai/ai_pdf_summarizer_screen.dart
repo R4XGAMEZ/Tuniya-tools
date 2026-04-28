@@ -122,7 +122,7 @@ class _AiPdfSummarizerScreenState extends State<AiPdfSummarizerScreen> {
                 decoration: BoxDecoration(
                   color: AppTheme.cardBg2,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4), style: BorderStyle.solid),
+                  border: Border.all(color: AppTheme.purple.withOpacity(0.4), style: BorderStyle.solid),
                 ),
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
                   Icon(Icons.upload_file_outlined, color: AppTheme.purple, size: 40),

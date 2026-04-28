@@ -183,9 +183,9 @@ class _TextToPdfScreenState extends BaseToolScreenState<TextToPdfScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppTheme.purple.withValues(alpha: 0.1),
+        color: AppTheme.purple.withOpacity(0.1),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
+        border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
       ),
       child: Column(children: [
         Row(children: [
@@ -212,7 +212,7 @@ class _TextToPdfScreenState extends BaseToolScreenState<TextToPdfScreen> {
             icon: const Icon(Icons.share_outlined, size: 16),
             label: Text('Share', style: GoogleFonts.rajdhani()),
             style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple,
-                side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.5))),
+                side: BorderSide(color: AppTheme.purple.withOpacity(0.5))),
           )),
         ]),
       ]),

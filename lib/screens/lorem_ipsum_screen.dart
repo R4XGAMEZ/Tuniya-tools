@@ -191,7 +191,7 @@ class _LoremIpsumScreenState extends BaseToolScreenState<LoremIpsumScreen> {
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
+              border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
             ),
             child: SelectableText(
               _output,
@@ -233,9 +233,9 @@ class _LoremIpsumScreenState extends BaseToolScreenState<LoremIpsumScreen> {
   Widget _chip(String label) => Container(
     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
     decoration: BoxDecoration(
-      color: AppTheme.purple.withValues(alpha: 0.1),
+      color: AppTheme.purple.withOpacity(0.1),
       borderRadius: BorderRadius.circular(20),
-      border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
+      border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
     ),
     child: Text(label,
         style: GoogleFonts.rajdhani(color: AppTheme.purple, fontSize: 12,
