@@ -1,5 +1,3 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +16,7 @@ class AudioJoinerScreen extends BaseToolScreen {
 }
 
 class _AudioJoinerScreenState extends BaseToolScreenState<AudioJoinerScreen> {
+  String? errorMessage;
   final List<File> _files = [];
   String? _outputPath;
   String _format = 'MP3';
@@ -52,7 +51,7 @@ class _AudioJoinerScreenState extends BaseToolScreenState<AudioJoinerScreen> {
       final ext = _format.toLowerCase();
       final out = p.join(dir.path, 'joined_${DateTime.now().millisecondsSinceEpoch}.$ext');
       final cmd = '-f concat -safe 0 -i "$listFile" -c:a ${_format == 'MP3' ? 'libmp3lame' : 'aac'} -b:a 192k "$out"';
-      await // ffmpeg removed
+      await FFmpegKit.execute(cmd);
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);
@@ -100,7 +99,7 @@ class _AudioJoinerScreenState extends BaseToolScreenState<AudioJoinerScreen> {
                 onReorder: _reorder,
                 children: _files.asMap().entries.map((e) => ListTile(
                   key: ValueKey(e.key),
-                  leading: CircleAvatar(backgroundColor: AppTheme.purple.withOpacity(0.2), child: Text('${e.key + 1}', style: GoogleFonts.inter(color: AppTheme.purple))),
+                  leading: CircleAvatar(backgroundColor: AppTheme.purple.withValues(alpha: 0.2), child: Text('${e.key + 1}', style: GoogleFonts.inter(color: AppTheme.purple))),
                   title: Text(p.basename(e.value.path), style: GoogleFonts.inter(color: AppTheme.textPrimary, fontSize: 13), overflow: TextOverflow.ellipsis),
                   subtitle: Text(_fmt(e.value), style: GoogleFonts.inter(color: AppTheme.textSecondary, fontSize: 11)),
                   trailing: IconButton(icon: const Icon(Icons.remove_circle_outline, color: Colors.red), onPressed: () => _removeFile(e.key)),

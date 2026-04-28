@@ -145,9 +145,9 @@ class _PasswordGeneratorScreenState extends BaseToolScreenState<PasswordGenerato
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: AppTheme.purple.withOpacity(0.08),
+              color: AppTheme.purple.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
+              border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
             ),
             child: Column(children: [
               SelectableText(_password, textAlign: TextAlign.center,
@@ -177,7 +177,7 @@ class _PasswordGeneratorScreenState extends BaseToolScreenState<PasswordGenerato
                   icon: const Icon(Icons.copy_outlined, size: 16),
                   label: Text('Copy', style: GoogleFonts.rajdhani()),
                   style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple,
-                      side: BorderSide(color: AppTheme.purple.withOpacity(0.5))),
+                      side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.5))),
                 )),
                 const SizedBox(width: 10),
                 Expanded(child: OutlinedButton.icon(
@@ -218,7 +218,7 @@ class _PasswordGeneratorScreenState extends BaseToolScreenState<PasswordGenerato
                   icon: const Icon(Icons.list_outlined, size: 18),
                   label: Text('$_batchCount Passwords Banao', style: GoogleFonts.rajdhani()),
                   style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple,
-                      side: BorderSide(color: AppTheme.purple.withOpacity(0.5)),
+                      side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.5)),
                       padding: const EdgeInsets.all(12)),
                 ),
               ),

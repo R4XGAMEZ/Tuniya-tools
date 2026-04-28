@@ -1,5 +1,3 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +16,7 @@ class VolumeBoosterScreen extends BaseToolScreen {
 }
 
 class _VolumeBoosterScreenState extends BaseToolScreenState<VolumeBoosterScreen> {
+  String? errorMessage;
   File? _file;
   double _gain = 2.0; // 1x = original, up to 5x
   String? _outputPath;
@@ -37,7 +36,7 @@ class _VolumeBoosterScreenState extends BaseToolScreenState<VolumeBoosterScreen>
       final ext = p.extension(_file!.path).replaceAll('.', '');
       final out = p.join(dir.path, 'boosted_${DateTime.now().millisecondsSinceEpoch}.$ext');
       final cmd = '-i "${_file!.path}" -af "volume=${_gain.toStringAsFixed(1)}" "$out"';
-      await // ffmpeg removed
+      await FFmpegKit.execute(cmd);
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);
@@ -92,7 +91,7 @@ class _VolumeBoosterScreenState extends BaseToolScreenState<VolumeBoosterScreen>
         const SizedBox(height: 12),
         if (_gain > 4.0) Container(
           padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(color: Colors.red.withOpacity(0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.red.shade700)),
+          decoration: BoxDecoration(color: Colors.red.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.red.shade700)),
           child: Row(children: [const Icon(Icons.warning_amber, color: Colors.red, size: 18), const SizedBox(width: 8), Expanded(child: Text('Bahut zyada gain se audio distort ho sakta hai!', style: GoogleFonts.inter(color: Colors.red, fontSize: 12)))]),
         ),
         const SizedBox(height: 24),

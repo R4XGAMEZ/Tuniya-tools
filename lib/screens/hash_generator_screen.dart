@@ -129,7 +129,7 @@ class _HashGeneratorScreenState extends BaseToolScreenState<HashGeneratorScreen>
             icon: const Icon(Icons.copy_all_outlined, size: 18),
             label: Text('Copy All Hashes', style: GoogleFonts.rajdhani()),
             style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple,
-                side: BorderSide(color: AppTheme.purple.withOpacity(0.5)),
+                side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.5)),
                 padding: const EdgeInsets.all(14)),
           ),
         ],

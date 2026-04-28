@@ -16,6 +16,7 @@ class BatchVideoToMp3Screen extends BaseToolScreen {
 }
 
 class _BatchVideoToMp3ScreenState extends BaseToolScreenState<BatchVideoToMp3Screen> {
+  String? errorMessage;
   final List<File> _videos = [];
   final Map<String, String> _status = {}; // filename -> status
   String _bitrate = '192k';
@@ -52,7 +53,7 @@ class _BatchVideoToMp3ScreenState extends BaseToolScreenState<BatchVideoToMp3Scr
         final name = p.basenameWithoutExtension(video.path);
         final out = p.join(outDir.path, '$name.mp3');
         final cmd = '-i "${video.path}" -vn -acodec libmp3lame -b:a $_bitrate "$out"';
-        await // ffmpeg removed
+        await FFmpegKit.execute(cmd);
         if (await File(out).exists()) {
           if (!mounted) return;
           setState(() { _status[video.path] = '✅ Done'; _done++; });
@@ -137,7 +138,7 @@ class _BatchVideoToMp3ScreenState extends BaseToolScreenState<BatchVideoToMp3Scr
             if (!_converting && _done > 0) ...[
               const SizedBox(height: 12),
               Container(
-                padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: Colors.green.withOpacity(0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.green.shade700)),
+                padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.green.shade700)),
                 child: Row(children: [const Icon(Icons.folder_outlined, color: Colors.green), const SizedBox(width: 8), Expanded(child: Text('$_done MP3 files saved in TuniyaMP3 folder! 🎵', style: GoogleFonts.inter(color: Colors.green, fontSize: 13)))]),
               ),
             ],

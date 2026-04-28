@@ -168,7 +168,7 @@ class _CaseConverterScreenState extends BaseToolScreenState<CaseConverterScreen>
             decoration: BoxDecoration(
               color: AppTheme.cardBg2,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
+              border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
             ),
             child: SelectableText(
               _output,

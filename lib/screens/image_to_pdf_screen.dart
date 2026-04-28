@@ -1,5 +1,3 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -247,9 +245,9 @@ class _ImageToPdfScreenState extends BaseToolScreenState<ImageToPdfScreen> {
   Widget _resultCard() => Container(
     padding: const EdgeInsets.all(16),
     decoration: BoxDecoration(
-      color: AppTheme.purple.withOpacity(0.1),
+      color: AppTheme.purple.withValues(alpha: 0.1),
       borderRadius: BorderRadius.circular(14),
-      border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
+      border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
     ),
     child: Column(children: [
       Row(children: [
@@ -273,7 +271,7 @@ class _ImageToPdfScreenState extends BaseToolScreenState<ImageToPdfScreen> {
           icon: const Icon(Icons.share_outlined, size: 16),
           label: Text('Share', style: GoogleFonts.rajdhani()),
           style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple,
-              side: BorderSide(color: AppTheme.purple.withOpacity(0.5))),
+              side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.5))),
         )),
       ]),
     ]),

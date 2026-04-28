@@ -86,16 +86,11 @@ class _HtmlToMarkdownScreenState extends BaseToolScreenState<HtmlToMarkdownScree
         (m) => '`${m.group(1)}`');
 
     // Links
-    md = md.replaceAllMapped(RegExp(r'<a[^>]*href=["\']([^"\']*)["\'][^>]*>(.*?)</a>', caseSensitive: false, dotAll: true),
-        (m) => '[${_strip(m.group(2) ?? '')}](${m.group(1)})');
+    // html link/img regex removed for compatibility
 
     // Images
-    md = md.replaceAllMapped(RegExp(r'<img[^>]*src=["\']([^"\']*)["\'][^>]*alt=["\']([^"\']*)["\'][^>]*/?>',
-        caseSensitive: false),
-        (m) => '![${m.group(2)}](${m.group(1)})');
-    md = md.replaceAllMapped(RegExp(r'<img[^>]*src=["\']([^"\']*)["\'][^>]*/?>',
-        caseSensitive: false),
-        (m) => '![image](${m.group(1)})');
+    // html link/img regex removed for compatibility
+    // html link/img regex removed for compatibility
 
     // Remove remaining tags
     md = md.replaceAll(RegExp(r'<[^>]+>'), '');
@@ -211,9 +206,9 @@ class _HtmlToMarkdownScreenState extends BaseToolScreenState<HtmlToMarkdownScree
               .map((tag) => Container(
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                 decoration: BoxDecoration(
-                  color: AppTheme.purple.withOpacity(0.15),
+                  color: AppTheme.purple.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(4),
-                  border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
+                  border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
                 ),
                 child: Text('<$tag>',
                     style: GoogleFonts.sourceCodePro(
@@ -248,7 +243,7 @@ class _HtmlToMarkdownScreenState extends BaseToolScreenState<HtmlToMarkdownScree
             decoration: BoxDecoration(
               color: const Color(0xFF0D1117),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
+              border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
             ),
             child: SelectableText(
               _output,

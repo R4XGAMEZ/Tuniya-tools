@@ -1,5 +1,3 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -180,7 +178,7 @@ class _LoremIpsumScreenState extends BaseToolScreenState<LoremIpsumScreen> {
               IconButton(
                 icon: const Icon(Icons.share_outlined, size: 18),
                 color: AppTheme.textSecondary,
-                onPressed: () => Share.shareWithResult(_output),
+                onPressed: () => Share.share(_output),
               ),
               IconButton(
                 icon: const Icon(Icons.refresh_outlined, size: 18),
@@ -193,7 +191,7 @@ class _LoremIpsumScreenState extends BaseToolScreenState<LoremIpsumScreen> {
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
+              border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
             ),
             child: SelectableText(
               _output,
@@ -235,9 +233,9 @@ class _LoremIpsumScreenState extends BaseToolScreenState<LoremIpsumScreen> {
   Widget _chip(String label) => Container(
     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
     decoration: BoxDecoration(
-      color: AppTheme.purple.withOpacity(0.1),
+      color: AppTheme.purple.withValues(alpha: 0.1),
       borderRadius: BorderRadius.circular(20),
-      border: Border.all(color: AppTheme.purple.withOpacity(0.3)),
+      border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3)),
     ),
     child: Text(label,
         style: GoogleFonts.rajdhani(color: AppTheme.purple, fontSize: 12,

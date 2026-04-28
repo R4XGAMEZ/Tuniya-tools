@@ -158,7 +158,7 @@ class _SquadPlannerScreenState extends BaseToolScreenState<SquadPlannerScreen> {
 
         Container(
           padding: const EdgeInsets.all(14),
-          decoration: BoxDecoration(color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(14), border: Border.all(color: AppTheme.purple.withOpacity(0.3))),
+          decoration: BoxDecoration(color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(14), border: Border.all(color: AppTheme.purple.withValues(alpha: 0.3))),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text('Member Add Karo', style: GoogleFonts.orbitron(color: AppTheme.textPrimary, fontSize: 12, fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
@@ -255,7 +255,7 @@ class _SquadPlannerScreenState extends BaseToolScreenState<SquadPlannerScreen> {
     Icon(Icons.sports_esports_outlined, color: AppTheme.textSecondary, size: 44),
     const SizedBox(height: 10),
     Text(t, style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 15)),
-    Text(s, style: GoogleFonts.rajdhani(color: AppTheme.textSecondary.withOpacity(0.6), fontSize: 12)),
+    Text(s, style: GoogleFonts.rajdhani(color: AppTheme.textSecondary.withValues(alpha: 0.6), fontSize: 12)),
   ])));
 }
 
@@ -278,7 +278,7 @@ class _MemberCard extends StatelessWidget {
       decoration: BoxDecoration(color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(12), border: Border.all(color: AppTheme.borderColor)),
       child: Row(children: [
         Container(width: 40, height: 40,
-          decoration: BoxDecoration(color: color.withOpacity(0.15), shape: BoxShape.circle, border: Border.all(color: color.withOpacity(0.5))),
+          decoration: BoxDecoration(color: color.withValues(alpha: 0.15), shape: BoxShape.circle, border: Border.all(color: color.withValues(alpha: 0.5))),
           child: Center(child: Text(member['name'].toString()[0].toUpperCase(),
               style: GoogleFonts.orbitron(color: color, fontSize: 16, fontWeight: FontWeight.bold)))),
         const SizedBox(width: 12),
@@ -286,7 +286,7 @@ class _MemberCard extends StatelessWidget {
           Text(member['name'] as String, style: GoogleFonts.rajdhani(color: AppTheme.textPrimary, fontSize: 14, fontWeight: FontWeight.w700)),
           Row(children: [
             Container(padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              decoration: BoxDecoration(color: color.withOpacity(0.15), borderRadius: BorderRadius.circular(4)),
+              decoration: BoxDecoration(color: color.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(4)),
               child: Text(member['role'] as String, style: GoogleFonts.rajdhani(color: color, fontSize: 10, fontWeight: FontWeight.w700))),
             if ((member['uid'] as String).isNotEmpty) ...[
               const SizedBox(width: 6),

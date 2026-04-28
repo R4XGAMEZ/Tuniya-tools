@@ -129,7 +129,7 @@ class _AiKeywordGenScreenState extends State<AiKeywordGenScreen> {
                 decoration: BoxDecoration(
                   color: AppTheme.cardBg2,
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
+                  border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
                 ),
                 child: Row(mainAxisSize: MainAxisSize.min, children: [
                   Container(width: 6, height: 6, decoration: BoxDecoration(gradient: AppTheme.brandGradient, shape: BoxShape.circle)),

@@ -39,7 +39,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: RadialGradient(colors: [
-                    AppTheme.purple.withOpacity(0.35), Colors.transparent,
+                    AppTheme.purple.withValues(alpha: 0.35), Colors.transparent,
                   ]),
                 ),
               ).animate().scale(duration: 2000.ms, curve: Curves.easeOut,
@@ -53,7 +53,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: RadialGradient(colors: [
-                    AppTheme.red.withOpacity(0.3), Colors.transparent,
+                    AppTheme.red.withValues(alpha: 0.3), Colors.transparent,
                   ]),
                 ),
               ).animate().scale(duration: 2200.ms, curve: Curves.easeOut,
@@ -72,7 +72,7 @@ class _IntroScreenState extends State<IntroScreen> {
                       shape: BoxShape.circle,
                       gradient: AppTheme.brandGradient,
                       boxShadow: [
-                        BoxShadow(color: AppTheme.purple.withOpacity(0.6),
+                        BoxShadow(color: AppTheme.purple.withValues(alpha: 0.6),
                             blurRadius: 40, spreadRadius: 8),
                       ],
                     ),
@@ -139,7 +139,7 @@ class _IntroScreenState extends State<IntroScreen> {
               child: Text('v1.0.0',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.rajdhani(
-                  color: AppTheme.textSecondary.withOpacity(0.4),
+                  color: AppTheme.textSecondary.withValues(alpha: 0.4),
                   fontSize: 12, letterSpacing: 2,
                 ),
               ).animate(delay: 700.ms).fadeIn(),

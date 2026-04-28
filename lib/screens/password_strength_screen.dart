@@ -53,9 +53,9 @@ class _PasswordStrengthScreenState extends BaseToolScreenState<PasswordStrengthS
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: _analysis.color.withOpacity(0.08),
+              color: _analysis.color.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: _analysis.color.withOpacity(0.4)),
+              border: Border.all(color: _analysis.color.withValues(alpha: 0.4)),
             ),
             child: Column(children: [
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -128,7 +128,7 @@ class _PasswordStrengthScreenState extends BaseToolScreenState<PasswordStrengthS
         ] else ...[
           Center(child: Column(children: [
             const SizedBox(height: 40),
-            Icon(Icons.lock_open_outlined, color: AppTheme.textSecondary.withOpacity(0.3), size: 60),
+            Icon(Icons.lock_open_outlined, color: AppTheme.textSecondary.withValues(alpha: 0.3), size: 60),
             const SizedBox(height: 16),
             Text('Password enter karo\nstrength check karne ke liye',
                 textAlign: TextAlign.center,

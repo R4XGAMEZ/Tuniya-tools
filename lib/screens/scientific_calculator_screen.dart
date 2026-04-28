@@ -286,9 +286,9 @@ class _ScientificCalculatorScreenState extends BaseToolScreenState<ScientificCal
     onTap: () => _press(key),
     child: Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-      decoration: BoxDecoration(color: color.withOpacity(0.15),
+      decoration: BoxDecoration(color: color.withValues(alpha: 0.15),
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: color.withOpacity(0.4))),
+          border: Border.all(color: color.withValues(alpha: 0.4))),
       child: Text(label, style: GoogleFonts.orbitron(color: color, fontSize: 11, fontWeight: FontWeight.bold)),
     ),
   );

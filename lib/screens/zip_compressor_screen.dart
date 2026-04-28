@@ -1,5 +1,3 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:archive/archive_io.dart';
 import 'package:file_picker/file_picker.dart';
@@ -168,7 +166,7 @@ class _ZipCompressorScreenState extends BaseToolScreenState<ZipCompressorScreen>
                 margin: const EdgeInsets.only(bottom: 8),
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: selected ? AppTheme.purple.withOpacity(0.15) : AppTheme.cardBg2,
+                  color: selected ? AppTheme.purple.withValues(alpha: 0.15) : AppTheme.cardBg2,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
                     color: selected ? AppTheme.purple : AppTheme.borderColor,
@@ -215,9 +213,9 @@ class _ZipCompressorScreenState extends BaseToolScreenState<ZipCompressorScreen>
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: AppTheme.purple.withOpacity(0.1),
+                color: AppTheme.purple.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
+                border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
               ),
               child: Column(children: [
                 Row(children: [
@@ -240,12 +238,12 @@ class _ZipCompressorScreenState extends BaseToolScreenState<ZipCompressorScreen>
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton.icon(
-                    onPressed: () => Share.shareXFiles([XFile(_savedPath!)]),
+                    onPressed: () => SharePlus.instance.share(ShareParams(files: [XFile(_savedPath!)])),
                     icon: const Icon(Icons.share_outlined, size: 16),
                     label: Text('Share ZIP', style: GoogleFonts.rajdhani()),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: AppTheme.purple,
-                      side: BorderSide(color: AppTheme.purple.withOpacity(0.5)),
+                      side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.5)),
                     ),
                   ),
                 ),

@@ -116,7 +116,7 @@ class _ColorPaletteScreenState extends BaseToolScreenState<ColorPaletteScreen> {
           if (_copiedHex != null) Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             margin: const EdgeInsets.only(bottom: 12),
-            decoration: BoxDecoration(color: Colors.green.withOpacity(0.1), borderRadius: BorderRadius.circular(10)),
+            decoration: BoxDecoration(color: Colors.green.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(10)),
             child: Text('Copied: $_copiedHex', style: GoogleFonts.inter(color: Colors.green)),
           ),
           Text('${_colors.length} Colors Extracted', style: GoogleFonts.inter(color: AppTheme.textSecondary, fontSize: 13)),

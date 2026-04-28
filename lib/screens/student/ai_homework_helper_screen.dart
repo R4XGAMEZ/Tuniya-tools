@@ -140,7 +140,7 @@ class _AiHomeworkHelperScreenState extends State<AiHomeworkHelperScreen> {
                   decoration: BoxDecoration(
                     color: AppTheme.cardBg2,
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
+                    border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
                   ),
                   child: SingleChildScrollView(
                     child: Text(_answer, style: GoogleFonts.rajdhani(color: AppTheme.textPrimary, fontSize: 14, height: 1.6)),

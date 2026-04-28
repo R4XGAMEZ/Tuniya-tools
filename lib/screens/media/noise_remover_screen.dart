@@ -1,5 +1,3 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +16,7 @@ class NoiseRemoverScreen extends BaseToolScreen {
 }
 
 class _NoiseRemoverScreenState extends BaseToolScreenState<NoiseRemoverScreen> {
+  String? errorMessage;
   File? _file;
   double _strength = 0.21;
   String? _outputPath;
@@ -38,7 +37,7 @@ class _NoiseRemoverScreenState extends BaseToolScreenState<NoiseRemoverScreen> {
       final out = p.join(dir.path, 'denoised_${DateTime.now().millisecondsSinceEpoch}.$ext');
       // afftdn = FFmpeg noise reduction filter
       final cmd = '-i "${_file!.path}" -af "afftdn=nf=${(-(_strength * 97 + 3)).toInt()}" -b:a 192k "$out"';
-      await // ffmpeg removed
+      await FFmpegKit.execute(cmd);
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);

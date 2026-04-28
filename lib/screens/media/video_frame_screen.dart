@@ -1,5 +1,3 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +16,7 @@ class VideoFrameScreen extends BaseToolScreen {
 }
 
 class _VideoFrameScreenState extends BaseToolScreenState<VideoFrameScreen> {
+  String? errorMessage;
   File? _videoFile;
   double _atSec = 0;
   String _format = 'JPG';
@@ -42,7 +41,7 @@ class _VideoFrameScreenState extends BaseToolScreenState<VideoFrameScreen> {
         final sec = _atSec + (i * 1.0);
         final out = p.join(dir.path, 'frame_${sec.toInt()}_${DateTime.now().millisecondsSinceEpoch}.$ext');
         final cmd = '-ss $sec -i "${_videoFile!.path}" -frames:v 1 -q:v 2 "$out"';
-        await // ffmpeg removed
+        await FFmpegKit.execute(cmd);
         if (await File(out).exists()) captured.add(out);
       }
       if (!mounted) return;

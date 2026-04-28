@@ -1,5 +1,3 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +16,7 @@ class BassBoosterScreen extends BaseToolScreen {
 }
 
 class _BassBoosterScreenState extends BaseToolScreenState<BassBoosterScreen> {
+  String? errorMessage;
   File? _file;
   double _bass = 10.0; // dB gain on low frequencies
   String _preset = 'Custom';
@@ -47,7 +46,7 @@ class _BassBoosterScreenState extends BaseToolScreenState<BassBoosterScreen> {
       final out = p.join(dir.path, 'bass_${DateTime.now().millisecondsSinceEpoch}.$ext');
       // equalizer: boost frequencies below 200Hz
       final cmd = '-i "${_file!.path}" -af "equalizer=f=60:width_type=o:width=2:g=${_bass.toInt()},equalizer=f=120:width_type=o:width=2:g=${(_bass * 0.7).toInt()},equalizer=f=200:width_type=o:width=2:g=${(_bass * 0.4).toInt()}" "$out"';
-      await // ffmpeg removed
+      await FFmpegKit.execute(cmd);
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);

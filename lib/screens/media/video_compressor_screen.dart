@@ -1,5 +1,3 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +16,7 @@ class VideoCompressorScreen extends BaseToolScreen {
 }
 
 class _VideoCompressorScreenState extends BaseToolScreenState<VideoCompressorScreen> {
+  String? errorMessage;
   File? _videoFile;
   String _quality = '480p';
   String? _outputPath;
@@ -72,7 +71,7 @@ class _VideoCompressorScreenState extends BaseToolScreenState<VideoCompressorScr
       final dir = await getTemporaryDirectory();
       final out = p.join(dir.path, 'compressed_${DateTime.now().millisecondsSinceEpoch}.mp4');
       final cmd = '-i "${_videoFile!.path}" -vf "$_scale,setsar=1" -c:v libx264 -crf $_crf -preset fast -c:a aac -b:a 128k "$out"';
-      await // ffmpeg removed
+      await FFmpegKit.execute(cmd);
       final outFile = File(out);
       if (await outFile.exists()) {
         if (!mounted) return;

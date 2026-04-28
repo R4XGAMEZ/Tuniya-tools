@@ -29,7 +29,7 @@ dependencies:
 
   # PDF
   pdf: ^3.11.1
-  pdfx: ^2.6.0
+  pdfx: 2.6.0
 
   # Archive (ZIP/JAR)
   archive: ^3.6.1
@@ -37,14 +37,14 @@ dependencies:
   # Image Processing
   image: ^4.2.0
   image_picker: ^1.1.2
-  image_cropper: ^10.0.0+1
+  image_cropper: ^7.1.0
 
   # Media - using safe LTS version
-  
+  ffmpeg_kit_flutter_min: ^0.2.0
 
   # File
   file_picker: ^8.1.4
-  open_file: ^3.3.2
+  open_file: ^3.5.7
   share_plus: ^10.0.2
 
   # Voice / TTS / STT

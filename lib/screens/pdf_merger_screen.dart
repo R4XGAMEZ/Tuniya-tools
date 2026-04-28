@@ -1,5 +1,4 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
+import 'package:pdf/pdf.dart';
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -130,7 +129,7 @@ class _PdfMergerScreenState extends BaseToolScreenState<PdfMergerScreen> {
             label: Text('PDFs Add Karo', style: GoogleFonts.rajdhani(fontSize: 15)),
             style: OutlinedButton.styleFrom(
               foregroundColor: AppTheme.purple,
-              side: BorderSide(color: AppTheme.purple.withOpacity(0.5)),
+              side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.5)),
               padding: const EdgeInsets.all(16),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             ),
@@ -210,9 +209,9 @@ class _PdfMergerScreenState extends BaseToolScreenState<PdfMergerScreen> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: AppTheme.purple.withOpacity(0.1),
+                color: AppTheme.purple.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
+                border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
               ),
               child: Column(children: [
                 Row(children: [
@@ -237,7 +236,7 @@ class _PdfMergerScreenState extends BaseToolScreenState<PdfMergerScreen> {
                     icon: const Icon(Icons.share_outlined, size: 16),
                     label: Text('Share', style: GoogleFonts.rajdhani()),
                     style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple,
-                        side: BorderSide(color: AppTheme.purple.withOpacity(0.5))),
+                        side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.5))),
                   )),
                 ]),
               ]),

@@ -196,9 +196,9 @@ class _ReadingTimeCalcScreenState
       decoration: BoxDecoration(
         color: AppTheme.cardBg2,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppTheme.purple.withOpacity(0.4), width: 1.5),
+        border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4), width: 1.5),
         gradient: LinearGradient(
-          colors: [AppTheme.purple.withOpacity(0.08), AppTheme.cardBg2],
+          colors: [AppTheme.purple.withValues(alpha: 0.08), AppTheme.cardBg2],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -292,7 +292,7 @@ class _ReadingTimeCalcScreenState
             width: 56, height: 56,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: d.color.withOpacity(0.15),
+              color: d.color.withValues(alpha: 0.15),
               border: Border.all(color: d.color, width: 2),
             ),
             child: Center(
@@ -354,7 +354,7 @@ class _ReadingTimeCalcScreenState
         Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.15),
+            color: color.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Icon(icon, color: color, size: 18),
@@ -378,7 +378,7 @@ class _ReadingTimeCalcScreenState
       padding: const EdgeInsets.symmetric(vertical: 40),
       child: Column(children: [
         Icon(Icons.timer_outlined,
-            color: AppTheme.textSecondary.withOpacity(0.4), size: 56),
+            color: AppTheme.textSecondary.withValues(alpha: 0.4), size: 56),
         const SizedBox(height: 16),
         Text('Kuch text paste karo',
             style: GoogleFonts.rajdhani(
@@ -386,7 +386,7 @@ class _ReadingTimeCalcScreenState
         const SizedBox(height: 6),
         Text('Reading time aur difficulty score milega',
             style: GoogleFonts.rajdhani(
-                color: AppTheme.textSecondary.withOpacity(0.6), fontSize: 13)),
+                color: AppTheme.textSecondary.withValues(alpha: 0.6), fontSize: 13)),
       ]),
     );
   }

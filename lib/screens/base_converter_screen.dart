@@ -171,10 +171,10 @@ class _BaseConverterScreenState extends BaseToolScreenState<BaseConverterScreen>
               margin: const EdgeInsets.only(bottom: 8),
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
-                color: isFrom ? AppTheme.purple.withOpacity(0.08) : AppTheme.cardBg2,
+                color: isFrom ? AppTheme.purple.withValues(alpha: 0.08) : AppTheme.cardBg2,
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                    color: isFrom ? AppTheme.purple.withOpacity(0.5) : AppTheme.borderColor,
+                    color: isFrom ? AppTheme.purple.withValues(alpha: 0.5) : AppTheme.borderColor,
                     width: isFrom ? 1.5 : 1),
               ),
               child: Row(children: [
@@ -185,7 +185,7 @@ class _BaseConverterScreenState extends BaseToolScreenState<BaseConverterScreen>
                     if (isFrom) ...[
                       const SizedBox(width: 6),
                       Container(padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                        decoration: BoxDecoration(color: AppTheme.purple.withOpacity(0.2),
+                        decoration: BoxDecoration(color: AppTheme.purple.withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(4)),
                         child: Text('INPUT', style: GoogleFonts.orbitron(
                             color: AppTheme.purple, fontSize: 8))),

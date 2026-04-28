@@ -179,18 +179,18 @@ class _GameSessionTimerScreenState extends BaseToolScreenState<GameSessionTimerS
           padding: const EdgeInsets.symmetric(vertical: 32),
           decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
-              AppTheme.purple.withOpacity(0.15),
-              AppTheme.red.withOpacity(0.08),
+              AppTheme.purple.withValues(alpha: 0.15),
+              AppTheme.red.withValues(alpha: 0.08),
             ]),
             borderRadius: BorderRadius.circular(24),
-            border: Border.all(color: _running ? AppTheme.purple.withOpacity(0.5) : AppTheme.borderColor),
+            border: Border.all(color: _running ? AppTheme.purple.withValues(alpha: 0.5) : AppTheme.borderColor),
           ),
           child: Column(children: [
             Text(_currentGame, style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 14)),
             const SizedBox(height: 8),
             Text(_fmt(_elapsed),
                 style: GoogleFonts.orbitron(color: _timerColor, fontSize: 52, fontWeight: FontWeight.bold,
-                    shadows: _running ? [Shadow(color: _timerColor.withOpacity(0.5), blurRadius: 20)] : [])),
+                    shadows: _running ? [Shadow(color: _timerColor.withValues(alpha: 0.5), blurRadius: 20)] : [])),
             const SizedBox(height: 16),
 
             // Break progress ring
@@ -226,7 +226,7 @@ class _GameSessionTimerScreenState extends BaseToolScreenState<GameSessionTimerS
                 decoration: BoxDecoration(
                   gradient: AppTheme.brandGradient,
                   borderRadius: BorderRadius.circular(14),
-                  boxShadow: [BoxShadow(color: AppTheme.purple.withOpacity(0.4), blurRadius: 16)],
+                  boxShadow: [BoxShadow(color: AppTheme.purple.withValues(alpha: 0.4), blurRadius: 16)],
                 ),
                 child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Icon(_running ? Icons.pause_rounded : Icons.play_arrow_rounded, color: Colors.white, size: 22),

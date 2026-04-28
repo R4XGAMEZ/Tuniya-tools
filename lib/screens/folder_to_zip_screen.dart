@@ -1,5 +1,3 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:archive/archive_io.dart';
 import 'package:file_picker/file_picker.dart';
@@ -227,9 +225,9 @@ class _FolderToZipScreenState extends BaseToolScreenState<FolderToZipScreen> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: AppTheme.purple.withOpacity(0.1),
+                color: AppTheme.purple.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
+                border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
               ),
               child: Column(children: [
                 Row(children: [
@@ -243,12 +241,12 @@ class _FolderToZipScreenState extends BaseToolScreenState<FolderToZipScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton.icon(
-                    onPressed: () => Share.shareXFiles([XFile(_savedPath!)]),
+                    onPressed: () => SharePlus.instance.share(ShareParams(files: [XFile(_savedPath!)])),
                     icon: const Icon(Icons.share_outlined, size: 16),
                     label: Text('Share ZIP', style: GoogleFonts.rajdhani()),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: AppTheme.purple,
-                      side: BorderSide(color: AppTheme.purple.withOpacity(0.5)),
+                      side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.5)),
                     ),
                   ),
                 ),

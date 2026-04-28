@@ -1,5 +1,3 @@
-import 'package:share_plus/share_plus.dart';
-import 'package:share_plus/share_plus.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +16,7 @@ class VideoToGifScreen extends BaseToolScreen {
 }
 
 class _VideoToGifScreenState extends BaseToolScreenState<VideoToGifScreen> {
+  String? errorMessage;
   File? _videoFile;
   String? _outputPath;
   double _startSec = 0;
@@ -42,7 +41,7 @@ class _VideoToGifScreenState extends BaseToolScreenState<VideoToGifScreen> {
       final dir = await getTemporaryDirectory();
       final out = p.join(dir.path, 'gif_${DateTime.now().millisecondsSinceEpoch}.gif');
       final cmd = '-ss ${_startSec.toInt()} -t ${_duration.toInt()} -i "${_videoFile!.path}" -vf "fps=$_fps,scale=$_size:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 "$out"';
-      await // ffmpeg removed
+      await FFmpegKit.execute(cmd);
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);

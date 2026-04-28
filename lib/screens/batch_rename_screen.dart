@@ -118,7 +118,7 @@ class _BatchRenameScreenState extends BaseToolScreenState<BatchRenameScreen> {
             label: Text('Files Select Karo', style: GoogleFonts.rajdhani(fontSize: 15)),
             style: OutlinedButton.styleFrom(
               foregroundColor: AppTheme.purple,
-              side: BorderSide(color: AppTheme.purple.withOpacity(0.5)),
+              side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.5)),
               padding: const EdgeInsets.all(16),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             ),

@@ -123,9 +123,9 @@ class _AiFixAnythingScreenState extends State<AiFixAnythingScreen> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
               decoration: BoxDecoration(
-                color: _fileName != null ? AppTheme.purple.withOpacity(0.1) : AppTheme.cardBg2,
+                color: _fileName != null ? AppTheme.purple.withValues(alpha: 0.1) : AppTheme.cardBg2,
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: _fileName != null ? AppTheme.purple.withOpacity(0.5) : AppTheme.borderColor),
+                border: Border.all(color: _fileName != null ? AppTheme.purple.withValues(alpha: 0.5) : AppTheme.borderColor),
               ),
               child: Row(mainAxisSize: MainAxisSize.min, children: [
                 Icon(_fileName != null ? Icons.attach_file : Icons.add_link, color: AppTheme.purple, size: 18),

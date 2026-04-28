@@ -34,7 +34,7 @@ class _WordCloudScreenState extends BaseToolScreenState<WordCloudScreen> {
     'why','how','all','both','each','few','more','most','other',
     'some','such','no','nor','not','only','own','same','so','than',
     'too','very','just','but','and','or','if','as','of',
-    'ki','ka','ke','ko','hai','hain','tha','thi','se','ne',
+    'ki','ka','ke','ko','hai','hain','tha','thi','the','se','me','ne',
     'ye','woh','aur','par','mein','kya','jo','koi',
   };
 
@@ -168,7 +168,7 @@ class _WordCloudScreenState extends BaseToolScreenState<WordCloudScreen> {
             child: Text(
               word,
               style: GoogleFonts.rajdhani(
-                color: color.withOpacity(0.6 + ratio * 0.4),
+                color: color.withValues(alpha: 0.6 + ratio * 0.4),
                 fontSize: size,
                 fontWeight: ratio > 0.5 ? FontWeight.w700 : FontWeight.w400,
               ),

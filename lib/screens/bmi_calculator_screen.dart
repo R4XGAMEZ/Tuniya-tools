@@ -71,9 +71,9 @@ class _BmiCalculatorScreenState extends BaseToolScreenState<BmiCalculatorScreen>
           Container(
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: _catColor.withOpacity(0.1),
+              color: _catColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: _catColor.withOpacity(0.5)),
+              border: Border.all(color: _catColor.withValues(alpha: 0.5)),
             ),
             child: Column(children: [
               Text('Your BMI', style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 14)),

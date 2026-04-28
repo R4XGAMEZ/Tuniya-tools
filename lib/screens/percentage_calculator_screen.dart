@@ -177,9 +177,9 @@ class _PercentageCalculatorScreenState extends BaseToolScreenState<PercentageCal
     margin: const EdgeInsets.only(top: 20),
     padding: const EdgeInsets.all(20),
     decoration: BoxDecoration(
-      gradient: LinearGradient(colors: [AppTheme.purple.withOpacity(0.2), AppTheme.pink.withOpacity(0.1)]),
+      gradient: LinearGradient(colors: [AppTheme.purple.withValues(alpha: 0.2), AppTheme.pink.withValues(alpha: 0.1)]),
       borderRadius: BorderRadius.circular(16),
-      border: Border.all(color: AppTheme.purple.withOpacity(0.4)),
+      border: Border.all(color: AppTheme.purple.withValues(alpha: 0.4)),
     ),
     child: Column(children: [
       ShaderMask(
@@ -195,16 +195,16 @@ class _PercentageCalculatorScreenState extends BaseToolScreenState<PercentageCal
         icon: const Icon(Icons.copy_outlined, size: 16),
         label: Text('Copy', style: GoogleFonts.rajdhani()),
         style: OutlinedButton.styleFrom(foregroundColor: AppTheme.purple,
-            side: BorderSide(color: AppTheme.purple.withOpacity(0.4))),
+            side: BorderSide(color: AppTheme.purple.withValues(alpha: 0.4))),
       ),
     ]),
   );
 
   Widget _miniResultCard(String label, String value, Color color) => Container(
     padding: const EdgeInsets.all(16),
-    decoration: BoxDecoration(color: color.withOpacity(0.08),
+    decoration: BoxDecoration(color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: color.withOpacity(0.4))),
+        border: Border.all(color: color.withValues(alpha: 0.4))),
     child: Column(children: [
       Text(label, textAlign: TextAlign.center,
           style: GoogleFonts.rajdhani(color: AppTheme.textSecondary, fontSize: 12)),

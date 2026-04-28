@@ -136,13 +136,13 @@ class _ExamCountdownScreenState extends State<ExamCountdownScreen> {
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: AppTheme.cardBg2, borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: color.withOpacity(0.4)),
+                      border: Border.all(color: color.withValues(alpha: 0.4)),
                     ),
                     child: Row(
                       children: [
                         Container(
                           width: 60, height: 60,
-                          decoration: BoxDecoration(color: color.withOpacity(0.15), shape: BoxShape.circle, border: Border.all(color: color)),
+                          decoration: BoxDecoration(color: color.withValues(alpha: 0.15), shape: BoxShape.circle, border: Border.all(color: color)),
                           child: Center(
                             child: days < 0
                                 ? const Icon(Icons.check, color: Colors.grey)
