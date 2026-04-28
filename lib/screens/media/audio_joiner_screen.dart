@@ -1,4 +1,4 @@
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
+
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -50,7 +50,7 @@ class _AudioJoinerScreenState extends BaseToolScreenState<AudioJoinerScreen> {
       final ext = _format.toLowerCase();
       final out = p.join(dir.path, 'joined_${DateTime.now().millisecondsSinceEpoch}.$ext');
       final cmd = '-f concat -safe 0 -i "$listFile" -c:a ${_format == 'MP3' ? 'libmp3lame' : 'aac'} -b:a 192k "$out"';
-      await FFmpegKit.execute(cmd);
+      await Process.run("sh", ["-c", cmd]);
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);

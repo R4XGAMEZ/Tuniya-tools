@@ -1,4 +1,4 @@
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
+
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -37,7 +37,7 @@ class _VolumeBoosterScreenState extends BaseToolScreenState<VolumeBoosterScreen>
       final ext = p.extension(_file!.path).replaceAll('.', '');
       final out = p.join(dir.path, 'boosted_${DateTime.now().millisecondsSinceEpoch}.$ext');
       final cmd = '-i "${_file!.path}" -af "volume=${_gain.toStringAsFixed(1)}" "$out"';
-      await FFmpegKit.execute(cmd);
+      await Process.run("sh", ["-c", cmd]);
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);

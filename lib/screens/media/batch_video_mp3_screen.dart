@@ -1,4 +1,4 @@
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
+
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -54,7 +54,7 @@ class _BatchVideoToMp3ScreenState extends BaseToolScreenState<BatchVideoToMp3Scr
         final name = p.basenameWithoutExtension(video.path);
         final out = p.join(outDir.path, '$name.mp3');
         final cmd = '-i "${video.path}" -vn -acodec libmp3lame -b:a $_bitrate "$out"';
-        await FFmpegKit.execute(cmd);
+        await Process.run("sh", ["-c", cmd]);
         if (await File(out).exists()) {
           if (!mounted) return;
           setState(() { _status[video.path] = '✅ Done'; _done++; });

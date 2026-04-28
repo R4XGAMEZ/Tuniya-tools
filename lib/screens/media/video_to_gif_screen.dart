@@ -1,4 +1,4 @@
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
+
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -42,7 +42,7 @@ class _VideoToGifScreenState extends BaseToolScreenState<VideoToGifScreen> {
       final dir = await getTemporaryDirectory();
       final out = p.join(dir.path, 'gif_${DateTime.now().millisecondsSinceEpoch}.gif');
       final cmd = '-ss ${_startSec.toInt()} -t ${_duration.toInt()} -i "${_videoFile!.path}" -vf "fps=$_fps,scale=$_size:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 "$out"';
-      await FFmpegKit.execute(cmd);
+      await Process.run("sh", ["-c", cmd]);
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);

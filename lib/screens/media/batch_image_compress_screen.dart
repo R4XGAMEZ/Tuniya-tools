@@ -17,6 +17,7 @@ class BatchImageCompressScreen extends BaseToolScreen {
 }
 
 class _BatchImageCompressScreenState extends BaseToolScreenState<BatchImageCompressScreen> {
+  String? errorMessage;
   final List<File> _images = [];
   final Map<String, String> _status = {};
   int _quality = 70;

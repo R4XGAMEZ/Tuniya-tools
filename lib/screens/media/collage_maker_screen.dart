@@ -19,6 +19,7 @@ class CollageMakerScreen extends BaseToolScreen {
 }
 
 class _CollageMakerScreenState extends BaseToolScreenState<CollageMakerScreen> {
+  String? errorMessage;
   final List<File?> _slots = [null, null, null, null];
   String _layout = '2x2';
   Color _bgColor = Colors.black;

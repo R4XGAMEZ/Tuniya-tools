@@ -1,4 +1,4 @@
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
+
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -72,7 +72,7 @@ class _VideoCompressorScreenState extends BaseToolScreenState<VideoCompressorScr
       final dir = await getTemporaryDirectory();
       final out = p.join(dir.path, 'compressed_${DateTime.now().millisecondsSinceEpoch}.mp4');
       final cmd = '-i "${_videoFile!.path}" -vf "$_scale,setsar=1" -c:v libx264 -crf $_crf -preset fast -c:a aac -b:a 128k "$out"';
-      await FFmpegKit.execute(cmd);
+      await Process.run("sh", ["-c", cmd]);
       final outFile = File(out);
       if (await outFile.exists()) {
         if (!mounted) return;

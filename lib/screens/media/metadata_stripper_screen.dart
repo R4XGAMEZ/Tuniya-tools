@@ -56,7 +56,7 @@ class _MetadataStripperScreenState extends BaseToolScreenState<MetadataStripperS
         final out = p.join(dir.path, 'stripped_${p.basenameWithoutExtension(file.path)}.$ext');
         if (_isVideo(file.path)) {
           // Remove all metadata from video
-          await FFmpegKit.execute('-i "${file.path}" -map_metadata -1 -c:v copy -c:a copy "$out"');
+          await Process.run("sh", ["-c", '-i "${file.path}" -map_metadata -1 -c:v copy -c:a copy "$out"']);
         } else {
           // Strip EXIF from image
           final bytes = await file.readAsBytes();

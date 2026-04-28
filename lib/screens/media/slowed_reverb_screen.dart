@@ -1,4 +1,4 @@
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
+
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,7 +43,7 @@ class _SlowedReverbScreenState extends BaseToolScreenState<SlowedReverbScreen> {
       if (_pitchCorrect) af += ',asetrate=44100*$_speed,aresample=44100';
       af += ',aecho=0.8:$reverbWet:60:$reverbDry';
       final cmd = '-i "${_file!.path}" -af "$af" -b:a 192k "$out"';
-      await FFmpegKit.execute(cmd);
+      await Process.run("sh", ["-c", cmd]);
       if (await File(out).exists()) {
         if (!mounted) return;
         setState(() => _outputPath = out);

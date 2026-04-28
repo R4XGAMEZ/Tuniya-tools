@@ -20,6 +20,7 @@ class CircularCropScreen extends BaseToolScreen {
 }
 
 class _CircularCropScreenState extends BaseToolScreenState<CircularCropScreen> {
+  String? errorMessage;
   File? _originalFile;
   File? _croppedFile;
   final _repaintKey = GlobalKey();
