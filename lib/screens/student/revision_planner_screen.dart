@@ -251,7 +251,7 @@ class _RevisionPlannerScreenState extends State<RevisionPlannerScreen> {
                   _sectionHeader('✅ Completed', Colors.green),
                   ...done.map((t) => _topicCard(t)),
               ] : <Widget>[]
-              }(),
+            }(),
             ],
           ],
         ),
