@@ -1,0 +1,71 @@
+name: tuniya_tools
+description: TUNIYA TOOLS v16 - All-in-one utility app by R4XGAMEZ
+publish_to: 'none'
+version: 1.0.0+16
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Fonts
+  google_fonts: ^6.2.1
+
+  # Storage & Preferences
+  shared_preferences: ^2.2.3
+  path_provider: ^2.1.4
+  path: ^1.9.0
+
+  # Permissions
+
+  # Networking & APIs
+  dio: ^5.7.0
+  http: ^1.2.2
+
+  # PDF
+  pdf: ^3.11.1
+  pdfx: ^2.7.0
+
+  # Archive (ZIP/JAR)
+  archive: ^3.6.1
+
+  # Image Processing
+  image: ^4.2.0
+  image_picker: ^1.1.2
+  image_cropper: ^7.1.0
+
+  # Media - using safe LTS version
+  ffmpeg_kit_flutter_min: ^0.2.0
+
+  # File
+  file_picker: ^8.1.4
+  open_file: ^3.5.7
+  share_plus: ^10.0.2
+
+  # Voice / TTS / STT
+
+  # Code Editor
+
+  # UI
+  flutter_animate: ^4.5.0
+
+  # Utils
+  crypto: ^3.0.5
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.13
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+
